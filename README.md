@@ -1,2 +1,2 @@
-# reading-notes
+# Reading-Notes
 My reading notes.
