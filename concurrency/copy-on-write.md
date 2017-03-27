@@ -48,8 +48,8 @@ read more write less
 
 # References
 
-[Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write)
-[Java中的CopyOnWrite容器](http://coolshell.cn/articles/11175.html#_motz)
+- [Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write)
+- [Java中的CopyOnWrite容器](http://coolshell.cn/articles/11175.html#_motz)
 
 ------
 Created at 2017-03-27 19:00
