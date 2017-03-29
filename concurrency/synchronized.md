@@ -30,6 +30,10 @@ public void testSynchronized(){
 
 
 
+# References
+
+- [Synchronized Methods](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html)
+
 ------
 
 created at 2017-03-29 21:15
