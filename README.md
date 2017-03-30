@@ -10,3 +10,5 @@ My reading notes.
    - [thread-lifecycle-in-java](concurrency/thread-lifecycle-in-java.md)
    - [sleep-wait]( /concurrency/sleep-wait.md)
    - [synchronized](/concurrency/synchronized.md)
+- design pattern
+   - [Singleton](/design-pattern/singleton.md)
