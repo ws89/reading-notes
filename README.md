@@ -12,3 +12,4 @@ My reading notes.
    - [synchronized](/concurrency/synchronized.md)
 - design pattern
    - [Singleton](/design-pattern/singleton.md)
+
