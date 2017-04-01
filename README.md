@@ -28,5 +28,7 @@ Read → Think → Note → Review
     - Level-2
     - [adjacent-elements-product](/algorithm/code-arcade/adjacent-elements-product.md)
     - [shape-area](/algorithm/code-arcade/shape-area.md)
+    - [make-array-consecutive2](/algorithm/code-arcade/make-array-consecutive2.md)
     - to be continued...
+
 
