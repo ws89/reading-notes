@@ -48,7 +48,7 @@ int centuryFromYear(int year) {
     }else{
         return dToInt;
     }
-}WWW
+}
 ```
 
 # Source
