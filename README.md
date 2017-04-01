@@ -1,5 +1,5 @@
 # Reading-Notes
-My reading notes.
+Read → Think → Note → Review
 
 
 
@@ -22,8 +22,10 @@ My reading notes.
 
 - coding-skills-testing
   - code-arcode
-    - LEVEL-1
+    - Level-1
     - [century-from-year](/algorithm/code-arcade/century-from-year.md)
     - [check-palindrome](/algorithm/code-arcade/check-palindrome.md)
-    - LEVEL-2
+    - Level-2
+    - [adjacent-elements-product](/algorithm/code-arcade/adjacent-elements-product.md)
     - to be continued...
+
