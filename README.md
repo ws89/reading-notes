@@ -13,3 +13,13 @@ My reading notes.
 - design pattern
    - [Singleton](/design-pattern/singleton.md)
 
+
+
+
+- coding-skills-testing
+  - code-arcode
+    - LEVEL-1
+    - [century-from-year](/algorithm/code-arcade/century-from-year.md)
+    - [check-palindrome](/algorithm/code-arcade/check-palindrome.md)
+    - LEVEL-2
+    - to be continued...
