@@ -27,5 +27,6 @@ Read → Think → Note → Review
     - [check-palindrome](/algorithm/code-arcade/check-palindrome.md)
     - Level-2
     - [adjacent-elements-product](/algorithm/code-arcade/adjacent-elements-product.md)
+    - [shape-area](/algorithm/code-arcade/shape-area.md)
     - to be continued...
 
