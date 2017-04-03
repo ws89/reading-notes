@@ -29,7 +29,10 @@ Read → Think → Note → Review
     - [adjacent-elements-product](/algorithm/code-arcade/adjacent-elements-product.md)
     - [shape-area](/algorithm/code-arcade/shape-area.md)
     - [make-array-consecutive2](/algorithm/code-arcade/make-array-consecutive2.md)
-    - ​[almost-increasing-sequence](/algorithm/code-arcade/almost-increasing-sequence.md)
+    - [almost-increasing-sequence](/algorithm/code-arcade/almost-increasing-sequence.md)
+    - [matrix-elements-sum](/algorithm/code-arcade/matrix-elements-sum.md)
+    - Level-3
+    - ​
     - to be continued...
 
 
