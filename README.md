@@ -29,6 +29,7 @@ Read → Think → Note → Review
     - [adjacent-elements-product](/algorithm/code-arcade/adjacent-elements-product.md)
     - [shape-area](/algorithm/code-arcade/shape-area.md)
     - [make-array-consecutive2](/algorithm/code-arcade/make-array-consecutive2.md)
+    - ​[almost-increasing-sequence](/algorithm/code-arcade/almost-increasing-sequence.md)
     - to be continued...
 
 
