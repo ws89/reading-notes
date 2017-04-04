@@ -34,6 +34,7 @@ Read → Think → Note → Review
     - Level-3
     - [all-longest-strings](/algorithm/code-arcade/all-longest-strings.md)
     - [common-character-count](/algorithm/code-arcade/common-character-count.md)
+    - [is-lucky](/algorithm/code-arcade/is-lucky.md)
     - ​
     - to be continued...
 
