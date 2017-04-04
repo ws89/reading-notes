@@ -32,6 +32,8 @@ Read → Think → Note → Review
     - [almost-increasing-sequence](/algorithm/code-arcade/almost-increasing-sequence.md)
     - [matrix-elements-sum](/algorithm/code-arcade/matrix-elements-sum.md)
     - Level-3
+    - [all-longest-strings](/algorithm/code-arcade/all-longest-strings.md)
+    - [common-character-count](/algorithm/code-arcade/common-character-count.md)
     - ​
     - to be continued...
 
