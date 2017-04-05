@@ -27,7 +27,8 @@ linux IPC(inter-process communication)
 
 static nested class vs nested class
 
-final keyword
+- [x] final keyword
+
 
 RPC vs HTTP
 
