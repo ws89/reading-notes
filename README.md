@@ -36,6 +36,7 @@ Read → Think → Note → Review
     - [common-character-count](/algorithm/code-arcade/common-character-count.md)
     - [is-lucky](/algorithm/code-arcade/is-lucky.md)
     - [sort-by-height](/algorithm/code-arcade/sort-by-height.md)
+    - [reverse-parentheses](/algorithm/code-arcade/reverse-parentheses.md)
     - ​
     - to be continued...
 
