@@ -11,7 +11,9 @@ Read → Think → Note → Review
    - [sleep-wait]( /concurrency/sleep-wait.md)
    - [synchronized](/concurrency/synchronized.md)
 - design pattern
-   - [Singleton](/design-pattern/singleton.md)
+   - [singleton](/design-pattern/singleton.md)
+- java
+   - [final](/java/final.md)
 
 
 
@@ -21,7 +23,7 @@ Read → Think → Note → Review
 
 
 - coding-skills-testing
-  - code-arcode
+  - code-arcade
     - Level-1
     - [century-from-year](/algorithm/code-arcade/century-from-year.md)
     - [check-palindrome](/algorithm/code-arcade/check-palindrome.md)
