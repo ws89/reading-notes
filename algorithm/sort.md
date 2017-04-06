@@ -38,7 +38,7 @@ Now, the array is already sorted, but the algorithm does not know if it is compl
 ( 1 2 **4 5** 8 ) →  ( 1 2 **4 5** 8 )
 ( 1 2 4 **5 8** ) →  ( 1 2 4 **5 8** )
 
-### using in java
+### Using in java
 
 ``` java
 public void bubbleSort(Integer[] array){
@@ -57,9 +57,69 @@ public void bubbleSort(Integer[] array){
 
 
 
+# Insertion Sort
+
+Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+
+### Time Complexity
+
+ O($n^2$)
+
+### Example
+
+We color a sorted part in green(**bold**), and an unsorted part in black. Here is an insertion sort step by step. We take an element from unsorted part and compare it with elements in sorted part, moving form right to left.
+
+29,  20,  73,  34,  64 
+
+**29**,  20,  73,  34,  64 
+
+**20, 29**,  73,  34,  64 
+
+**20, 29,  73**,  34,  64 
+
+**20, 29,  34,  73**,  64 
+
+**20, 29,  34,  64,  73**
+
+### Using in java
+
+``` java
+public void insertionSort(Integer[] array){
+        for(int i=1; i<array.length; i++){
+            int j = i-1;
+            while (j>=0){
+                if(array[i] < array[j]){
+                    j--;
+                }else{
+                    break;
+                }
+            }
+            j += 1;
+            int p = i;
+            // move elements
+            if(p > j){
+                int pValue = array[p];
+                while (p>j){
+                    array[p] = array[p-1];
+                    p--;
+                }
+                array[j] = pValue;//insert current element
+            }
+        }
+    }
+```
+
+
+
 # References
 
 [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
+
+[Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
+
+[Sorting](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html)
 
 
 
