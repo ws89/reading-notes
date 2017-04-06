@@ -47,6 +47,7 @@ Read → Think → Note → Review
     - [palindrome-rearranging](/algorithm/code-arcade/palindrome-rearranging.md)
     - Level-5
     - [are-equally-strong](/algorithm/code-arcade/are-equally-strong.md)
+    - [array-maximal-adjacent-difference](/algorithm/code-arcade/array-maximal-adjacent-difference.md)
     - ​
     - to be continued...
 
