@@ -42,6 +42,8 @@ Read → Think → Note → Review
     - Level-4
     - [alternating-sums](/algorithm/code-arcade/alternating-sums.md)
     - [add-border](/algorithm/code-arcade/add-border.md)
+    - [are-similar](/algorithm/code-arcade/are-similar.md)
+    - [array-change](/algorithm/code-arcade/array-change.md)
     - ​
     - to be continued...
 
