@@ -41,6 +41,7 @@ Read → Think → Note → Review
     - [reverse-parentheses](/algorithm/code-arcade/reverse-parentheses.md)
     - Level-4
     - [alternating-sums](/algorithm/code-arcade/alternating-sums.md)
+    - [add-border](/algorithm/code-arcade/add-border.md)
     - ​
     - to be continued...
 
