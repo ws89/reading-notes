@@ -45,6 +45,8 @@ Read → Think → Note → Review
     - [are-similar](/algorithm/code-arcade/are-similar.md)
     - [array-change](/algorithm/code-arcade/array-change.md)
     - [palindrome-rearranging](/algorithm/code-arcade/palindrome-rearranging.md)
+    - Level-5
+    - [are-equally-strong](/algorithm/code-arcade/are-equally-strong.md)
     - ​
     - to be continued...
 
