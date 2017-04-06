@@ -48,6 +48,7 @@ Read → Think → Note → Review
     - Level-5
     - [are-equally-strong](/algorithm/code-arcade/are-equally-strong.md)
     - [array-maximal-adjacent-difference](/algorithm/code-arcade/array-maximal-adjacent-difference.md)
+    - [is-ipv4-address](/algorithm/code-arcade/is-ipv4-address.md)
     - ​
     - to be continued...
 
