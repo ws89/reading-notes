@@ -49,6 +49,7 @@ Read → Think → Note → Review
     - [are-equally-strong](/algorithm/code-arcade/are-equally-strong.md)
     - [array-maximal-adjacent-difference](/algorithm/code-arcade/array-maximal-adjacent-difference.md)
     - [is-ipv4-address](/algorithm/code-arcade/is-ipv4-address.md)
+    - [avoid-abstacles](/algorithm/code-arcade/avoid-abstacles.md)
     - ​
     - to be continued...
 
