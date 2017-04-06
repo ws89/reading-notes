@@ -14,6 +14,8 @@ Read → Think → Note → Review
    - [singleton](/design-pattern/singleton.md)
 - java
    - [final](/java/final.md)
+- algorithm
+   - [sorting](/algorithm/sort.md)
 
 
 
