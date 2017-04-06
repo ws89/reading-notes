@@ -44,6 +44,7 @@ Read → Think → Note → Review
     - [add-border](/algorithm/code-arcade/add-border.md)
     - [are-similar](/algorithm/code-arcade/are-similar.md)
     - [array-change](/algorithm/code-arcade/array-change.md)
+    - [palindrome-rearranging](/algorithm/code-arcade/palindrome-rearranging.md)
     - ​
     - to be continued...
 
