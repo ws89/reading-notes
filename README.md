@@ -39,6 +39,8 @@ Read → Think → Note → Review
     - [is-lucky](/algorithm/code-arcade/is-lucky.md)
     - [sort-by-height](/algorithm/code-arcade/sort-by-height.md)
     - [reverse-parentheses](/algorithm/code-arcade/reverse-parentheses.md)
+    - Level-4
+    - [alternating-sums](/algorithm/code-arcade/alternating-sums.md)
     - ​
     - to be continued...
 
