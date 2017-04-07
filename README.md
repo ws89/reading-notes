@@ -52,6 +52,7 @@ Read → Think → Note → Review
     - [array-maximal-adjacent-difference](/coding/code-arcade/array-maximal-adjacent-difference.md)
     - [is-ipv4-address](/coding/code-arcade/is-ipv4-address.md)
     - [avoid-obstacles](/coding/code-arcade/avoid-obstacles.md)
+    - [box-blur](/coding/code-arcade/box-blur.md)
     - ​
     - to be continued...
 
