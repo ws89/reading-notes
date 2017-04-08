@@ -55,6 +55,7 @@ Read → Think → Note → Review
     - [box-blur](/coding/code-arcade/box-blur.md)
     - [minesweeper](/coding/code-arcade/minesweeper.md)
     - Level-6
+    - [array-replace](/coding/code-arcade/array-replace.md)
     - ​
     - to be continued...
 
