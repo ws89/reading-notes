@@ -53,6 +53,8 @@ Read → Think → Note → Review
     - [is-ipv4-address](/coding/code-arcade/is-ipv4-address.md)
     - [avoid-obstacles](/coding/code-arcade/avoid-obstacles.md)
     - [box-blur](/coding/code-arcade/box-blur.md)
+    - [minesweeper](/coding/code-arcade/minesweeper.md)
+    - Level-6
     - ​
     - to be continued...
 
