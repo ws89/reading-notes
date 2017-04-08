@@ -56,6 +56,7 @@ Read → Think → Note → Review
     - [minesweeper](/coding/code-arcade/minesweeper.md)
     - Level-6
     - [array-replace](/coding/code-arcade/array-replace.md)
+    - [even-digits-only](/coding/code-arcade/even-digits-only.md)
     - ​
     - to be continued...
 
