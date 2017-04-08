@@ -57,6 +57,7 @@ Read → Think → Note → Review
     - Level-6
     - [array-replace](/coding/code-arcade/array-replace.md)
     - [even-digits-only](/coding/code-arcade/even-digits-only.md)
+    - [variable-name](/coding/code-arcade/variable-name.md)
     - ​
     - to be continued...
 
