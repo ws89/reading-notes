@@ -59,6 +59,7 @@ Read → Think → Note → Review
     - [array-replace](/coding/code-arcade/array-replace.md)
     - [even-digits-only](/coding/code-arcade/even-digits-only.md)
     - [variable-name](/coding/code-arcade/variable-name.md)
+    - [alphabetic-shift](/coding/code-arcade/alphabetic-shift.md)
     - ​
     - to be continued...
 
