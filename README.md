@@ -14,6 +14,7 @@ Read → Think → Note → Review
    - [singleton](/design-pattern/singleton.md)
 - java
    - [final](/java/final.md)
+   - [declaring-variables-inside-or-outside-of-a-loop](/java/declaring-variables-inside-or-outside-of-a-loop.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
 
