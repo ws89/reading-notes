@@ -60,6 +60,8 @@ Read → Think → Note → Review
     - [even-digits-only](/coding/code-arcade/even-digits-only.md)
     - [variable-name](/coding/code-arcade/variable-name.md)
     - [alphabetic-shift](/coding/code-arcade/alphabetic-shift.md)
+    - [chess-board-cell-color](/coding/code-arcade/chess-board-cell-color.md)
+    - Level-7
     - ​
     - to be continued...
 
