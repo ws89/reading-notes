@@ -62,6 +62,8 @@ Read → Think → Note → Review
     - [alphabetic-shift](/coding/code-arcade/alphabetic-shift.md)
     - [chess-board-cell-color](/coding/code-arcade/chess-board-cell-color.md)
     - Level-7
+    - [circle-of-numbers](/coding/code-arcade/circle-of-numbers.md)
+    - [deposit-profit](/coding/code-arcade/deposit-profit.md)
     - ​
     - to be continued...
 
