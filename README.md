@@ -65,7 +65,8 @@ Read → Think → Note → Review
     - [circle-of-numbers](/coding/code-arcade/circle-of-numbers.md)
     - [deposit-profit](/coding/code-arcade/deposit-profit.md)
     - [absolute-values-sum-minimization](/coding/code-arcade/absolute-values-sum-minimization.md)
-    - [strings-rearangement](/coding/code-arcade/strings-rearangement.md)
+    - [strings-rearangement](/coding/code-arcade/strings-rearrangement.md)
+    - Level-8
     - ​
     - to be continued...
 
