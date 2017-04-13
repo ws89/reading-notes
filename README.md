@@ -69,6 +69,7 @@ Read → Think → Note → Review
     - Level-8
     - [extract-each-kth](/coding/code-arcade/extract-each-kth.md)
     - [first-digit](/coding/code-arcade/first-digit.md)
+    - [different-symbols-naive](/coding/code-arcade/different-symbols-naive.md)
     - ​
     - to be continued...
 
