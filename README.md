@@ -68,6 +68,7 @@ Read → Think → Note → Review
     - [strings-rearrangement](/coding/code-arcade/strings-rearrangement.md)
     - Level-8
     - [extract-each-kth](/coding/code-arcade/extract-each-kth.md)
+    - [first-digit](/coding/code-arcade/first-digit.md)
     - ​
     - to be continued...
 
