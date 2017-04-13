@@ -10,6 +10,7 @@ Read → Think → Note → Review
    - [thread-lifecycle-in-java](concurrency/thread-lifecycle-in-java.md)
    - [sleep-wait]( /concurrency/sleep-wait.md)
    - [synchronized](/concurrency/synchronized.md)
+   - [CAS(compare-and-swap)](/concurrency/compare-and-swap.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
