@@ -75,6 +75,8 @@ Read → Think → Note → Review
     - [array-max-consecutive-sum](/coding/code-arcade/array-max-consecutive-sum.md)
     - Level-9
     - [growing-plant](/coding-code-arcade/growing-plant.md)
+    - [knapsack-light](/coding/code-arcade/knapsack.md)
+    - [longest-digits-prefix](/coding/code-arcade/longest-digits-prefix.md)
     - ​
     - to be continued...
 
