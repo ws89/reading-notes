@@ -70,6 +70,14 @@ Each thread holds an implicit reference to its copy of a thread-local variable a
 > **java.lang.ThreadLocal#get**
 
 ```java
+/**
+  * Returns the value in the current thread's copy of this
+  * thread-local variable.  If the variable has no value for the
+  * current thread, it is first initialized to the value returned
+  * by an invocation of the {@link #initialValue} method.
+  *
+  * @return the current thread's value of this thread-local
+*/
 public T get() {
     Thread t = Thread.currentThread();
     ThreadLocalMap map = getMap(t);
@@ -88,6 +96,15 @@ public T get() {
 > **java.lang.ThreadLocal#set**
 
 ```java
+/**
+  * Sets the current thread's copy of this thread-local variable
+  * to the specified value.  Most subclasses will have no need to
+  * override this method, relying solely on the {@link #initialValue}
+  * method to set the values of thread-locals.
+  *
+  * @param value the value to be stored in the current thread's copy of
+  *        this thread-local.
+*/
 public void set(T value) {
     Thread t = Thread.currentThread();
     ThreadLocalMap map = getMap(t);
@@ -101,12 +118,17 @@ public void set(T value) {
 > **java.lang.ThreadLocal#getMap**
 
 ```java
-ThreadLocalMap getMap(Thread t) {
+/**
+ * Get the map associated with a ThreadLocal. Overridden in
+ * InheritableThreadLocal.
+ *
+ * @param  t the current thread
+ * @return the map
+ */
+ ThreadLocalMap getMap(Thread t) {
     return t.threadLocals;/* ThreadLocal values pertaining to this thread. This map is maintained by the ThreadLocal class.*/ 
 }
 ```
-
-
 
 # References
 
