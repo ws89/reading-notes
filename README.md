@@ -77,6 +77,7 @@ Read → Think → Note → Review
     - [growing-plant](/coding-code-arcade/growing-plant.md)
     - [knapsack-light](/coding/code-arcade/knapsack.md)
     - [longest-digits-prefix](/coding/code-arcade/longest-digits-prefix.md)
+    - [digit-degree](/coding/code-arcade/digit-degree.md)
     - ​
     - to be continued...
 
