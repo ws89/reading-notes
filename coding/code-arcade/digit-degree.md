@@ -32,7 +32,19 @@ Given an integer, find its digit degree.
 **Best Votes**
 
 ``` java
-
+int digitDegree(int n)
+{
+    int r = 0;
+    for (; n > 9; r++)
+    {
+        int t = 0;
+        for (; n > 0; n /= 10)
+            t += n % 10;
+        n = t;
+    }
+    
+    return r;
+}
 ```
 
 **Mine**
