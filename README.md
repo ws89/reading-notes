@@ -73,6 +73,8 @@ Read → Think → Note → Review
     - [first-digit](/coding/code-arcade/first-digit.md)
     - [different-symbols-naive](/coding/code-arcade/different-symbols-naive.md)
     - [array-max-consecutive-sum](/coding/code-arcade/array-max-consecutive-sum.md)
+    - Level-9
+    - [growing-plant](/coding-code-arcade/growing-plant.md)
     - ​
     - to be continued...
 
