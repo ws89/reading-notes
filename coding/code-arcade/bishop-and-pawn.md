@@ -23,7 +23,8 @@ https://codefightsuserpics.s3.amazonaws.com/tasks/bishopAndPawn/img/ex1.jpg
 
   ![img](https://codefightsuserpics.s3.amazonaws.com/tasks/bishopAndPawn/img/ex2.jpg?_tm=1486560043835)
   https://codefightsuserpics.s3.amazonaws.com/tasks/bishopAndPawn/img/ex2.jpg
-  **Input/Output**
+
+**Input/Output**
 
 - **[time limit] 3000ms (java)**
 
