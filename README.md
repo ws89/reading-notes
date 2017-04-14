@@ -17,6 +17,7 @@ Read → Think → Note → Review
    - [final](/java/final.md)
    - [declaring-variables-inside-or-outside-of-a-loop](/java/declaring-variables-inside-or-outside-of-a-loop.md)
    - [volatile](/java/volatile.md)
+   - [ThreadLocal](/java/ThreadLocal.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
 
