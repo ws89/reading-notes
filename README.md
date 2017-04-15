@@ -85,6 +85,7 @@ Read → Think → Note → Review
     - [find-email-domain](/coding/code-arcade/find-email-domain.md)
     - [build-palindrome](/coding/code-arcade/build-palindrome.md)
     - [elections-winners](/coding/code-arcade/elections-winners.md)
+    - [is-mac48-address](/coding/code-arcade/is-mac48-address.md)
     - ​
     - to be continued...
 
