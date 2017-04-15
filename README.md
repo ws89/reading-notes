@@ -80,6 +80,11 @@ Read → Think → Note → Review
     - [longest-digits-prefix](/coding/code-arcade/longest-digits-prefix.md)
     - [digit-degree](/coding/code-arcade/digit-degree.md)
     - [bishop-and-pawn](/coding/code-arcade/bishop-and-pawn.md)
+    - Level-10
+    - [is-beautiful-strings](/coding/code-arcade/is-beautiful-strings.md)
+    - [find-email-domain](/coding/code-arcade/find-email-domain.md)
+    - [build-palindrome](/coding/code-arcade/build-palindrome.md)
+    - [elections-winners](/coding/code-arcade/elections-winners.md)
     - ​
     - to be continued...
 
