@@ -86,6 +86,8 @@ Read → Think → Note → Review
     - [build-palindrome](/coding/code-arcade/build-palindrome.md)
     - [elections-winners](/coding/code-arcade/elections-winners.md)
     - [is-mac48-address](/coding/code-arcade/is-mac48-address.md)
+    - Level-11
+    - [is-digit](/coding/code-arcade/is-digit.md)
     - ​
     - to be continued...
 
