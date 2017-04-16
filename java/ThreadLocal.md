@@ -130,6 +130,57 @@ public void set(T value) {
 }
 ```
 
+> **java.lang.ThreadLocal.ThreadLocalMap#expungeStaleEntry**
+
+```java
+/**
+ * Expunge a stale entry by rehashing any possibly colliding entries
+ * lying between staleSlot and the next null slot.  This also expunges
+ * any other stale entries encountered before the trailing null.  See
+ * Knuth, Section 6.4
+ *
+ * @param staleSlot index of slot known to have null key
+ * @return the index of the next null slot after staleSlot
+ * (all between staleSlot and this slot will have been checked
+ * for expunging).
+ */
+private int expungeStaleEntry(int staleSlot) {
+    Entry[] tab = table;
+    int len = tab.length;
+
+    // expunge entry at staleSlot
+    tab[staleSlot].value = null;
+    tab[staleSlot] = null;
+    size--;
+
+    // Rehash until we encounter null
+    Entry e;
+    int i;
+    for (i = nextIndex(staleSlot, len);
+         (e = tab[i]) != null;
+         i = nextIndex(i, len)) {
+        ThreadLocal<?> k = e.get();
+        if (k == null) {
+            e.value = null;
+            tab[i] = null;
+            size--;
+        } else {
+            int h = k.threadLocalHashCode & (len - 1);
+            if (h != i) {
+                tab[i] = null;
+
+                // Unlike Knuth 6.4 Algorithm R, we must scan until
+                // null because multiple entries could have been stale.
+                while (tab[h] != null)
+                    h = nextIndex(h, len);
+                tab[h] = e;
+            }
+        }
+    }
+    return i;
+}
+```
+
 # References
 
 [Java ThreadLocal](http://tutorials.jenkov.com/java-concurrency/threadlocal.html)
