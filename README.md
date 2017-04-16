@@ -89,6 +89,7 @@ Read → Think → Note → Review
     - [is-mac48-address](/coding/code-arcade/is-mac48-address.md)
     - Level-11
     - [is-digit](/coding/code-arcade/is-digit.md)
+    - [line-encoding](/coding/code-arcade/line-encoding.md)
     - ​
     - to be continued...
 
