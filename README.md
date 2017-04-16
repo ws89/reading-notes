@@ -18,6 +18,7 @@ Read → Think → Note → Review
    - [declaring-variables-inside-or-outside-of-a-loop](/java/declaring-variables-inside-or-outside-of-a-loop.md)
    - [volatile](/java/volatile.md)
    - [ThreadLocal](/java/ThreadLocal.md)
+   - [WeakReference](/java/WeakReference.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
 
