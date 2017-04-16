@@ -104,7 +104,7 @@ Reference of instance will be appended to `ReferenceQueue` and you can use it to
 
 # An Object's life-cycle diagram
 
-![](/attachments/Weak-Strong Soft-and-Phantom-Reference-in-Java.jpg)
+![](/attachments/Weak-Strong-Soft-and-Phantom-Reference-in-Java.jpg)
 
 
 
