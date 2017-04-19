@@ -92,6 +92,7 @@ Read → Think → Note → Review
     - [is-digit](/coding/code-arcade/is-digit.md)
     - [line-encoding](/coding/code-arcade/line-encoding.md)
     - [chess-knight](/coding/code-arcade/chess-knight.md)
+    - [delete-digit](/coding/code-arcade/delete-digit.md)
     - ​
     - to be continued...
 
