@@ -96,6 +96,7 @@ Read → Think → Note → Review
     - Level-12
     - [longest-word](/coding/code-arcade/longest-word.md)
     - [valid-time](/coding/code-arcade/valid-time.md)
+    - [sum-up-numbers](/coding/code-arcade/sum-up-numbers.md)
     - ​
     - to be continued...
 
