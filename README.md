@@ -93,6 +93,9 @@ Read → Think → Note → Review
     - [line-encoding](/coding/code-arcade/line-encoding.md)
     - [chess-knight](/coding/code-arcade/chess-knight.md)
     - [delete-digit](/coding/code-arcade/delete-digit.md)
+    - Level-12
+    - [longest-word](/coding/code-arcade/longest-word.md)
+    - [valid-time](/coding/code-arcade/valid-time.md)
     - ​
     - to be continued...
 
