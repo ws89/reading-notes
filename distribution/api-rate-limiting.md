@@ -65,7 +65,11 @@ The token bucket algorithm can be conceptually understood as follows:
 - When a packet (network layer [PDU](https://en.wikipedia.org/wiki/Protocol_data_unit)) of *n* bytes arrives, *n* tokens are removed from the bucket, and the packet is sent to the network.
 - If fewer than *n* tokens are available, no tokens are removed from the bucket, and the packet is considered to be *non-conformant*.
 
+### Leaky bucket
 
+- It is implemented as a single-server queue with constant service time.
+- If the bucket (buffer) overflows then packets are discarded.
+- In this algorithm the input rate can vary but the output rate remains constant.
 
 # References
 
