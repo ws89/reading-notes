@@ -21,6 +21,7 @@ Read → Think → Note → Review
    - [WeakReference](/java/WeakReference.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
+   - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
 
 - data structure
    - [timing-wheel](/data-structure/timing-wheel.md)
