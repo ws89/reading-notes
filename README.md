@@ -19,6 +19,7 @@ Read → Think → Note → Review
    - [volatile](/java/volatile.md)
    - [ThreadLocal](/java/ThreadLocal.md)
    - [WeakReference](/java/WeakReference.md)
+   - [Object-toString()](/java/Object-method-toString.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
