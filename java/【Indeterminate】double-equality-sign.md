@@ -58,10 +58,24 @@ public void test2(){
     System.out.println( i1 == i2 );//false //!!!
   	//!!!
     System.out.println( i1 + "\t" + i2);//1001 1000
+  
+    Integer i3 = 2000;
+    Integer i4 = i3;
+    System.out.println( i3 == i4 );//true
+    i3 = i3 +1;
+    System.out.println( i3 + "\t" + i4 );//2001	2000 (because Integer is immutabe,final class)
 }
 ```
 
 
+
+> java.lang.Integer
+
+```java
+public final class Integer extends Number implements Comparable<Integer> {
+	...
+}
+```
 
 
 
