@@ -19,7 +19,8 @@ Read → Think → Note → Review
    - [volatile](/java/volatile.md)
    - [ThreadLocal](/java/ThreadLocal.md)
    - [WeakReference](/java/WeakReference.md)
-   - [Object-toString()](/java/Object-method-toString.md)
+   - [Object-toString()](/java/Object-toString.md)
+   - [Object-hashCode()-equals()](/java/Object-hashCode-equals.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
@@ -32,11 +33,7 @@ Read → Think → Note → Review
   - [API-rate-limiting](/distribution/api-rate-limiting.md)
 
 
-
-
 ---
-
-
 
 - coding-skills-testing
   - code-arcade
