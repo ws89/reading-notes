@@ -103,7 +103,12 @@ Read → Think → Note → Review
     - [longest-word](/coding/code-arcade/longest-word.md)
     - [valid-time](/coding/code-arcade/valid-time.md)
     - [sum-up-numbers](/coding/code-arcade/sum-up-numbers.md)
-    - ​
-    - to be continued...
+    - [different-squares](/coding/code-arcade/different-squares.md)
+    - [digits-product](/coding/code-arcade/digits-product.md)
+    - [file-naming](/coding/code-arcade/file-naming.md)
+    - [message-from-binary-code](coding/code-arcae/message-from-binary-code.md)
+    - [spiral-numbers](/coding/code-arcade/spiral-numbers.md)
+    - [sudoku](/coding/code-arcade/sudoku.md)
+    - done.
 
 
