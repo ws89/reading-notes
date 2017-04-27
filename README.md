@@ -106,7 +106,7 @@ Read → Think → Note → Review
     - [different-squares](/coding/code-arcade/different-squares.md)
     - [digits-product](/coding/code-arcade/digits-product.md)
     - [file-naming](/coding/code-arcade/file-naming.md)
-    - [message-from-binary-code](coding/code-arcae/message-from-binary-code.md)
+    - [message-from-binary-code](coding/code-arcade/message-from-binary-code.md)
     - [spiral-numbers](/coding/code-arcade/spiral-numbers.md)
     - [sudoku](/coding/code-arcade/sudoku.md)
     - done.
