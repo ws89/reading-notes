@@ -48,6 +48,7 @@ public class HashCode {
     @Test
     public void test(){
         HashCode hashCode1 = new HashCode();
+        
         System.out.println( hashCode1.hashCode() + "\t" + System.identityHashCode(hashCode1));
       	//output:0	1522311648
     }
@@ -65,6 +66,10 @@ public class HashCode {
         HashCode hashCode1 = new HashCode();
         System.out.println( hashCode1.hashCode() + "\t" + System.identityHashCode(hashCode1));
       	//output:1522311648	1522311648
+            
+       HashCode hashCode2 = new HashCode();
+       System.out.println(hashCode1.hashCode() + "\t" + hashCode2.hashCode());
+       //when not override hashCode(),output:1617791695	125993742      	
     }
 }
 ```
