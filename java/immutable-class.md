@@ -43,6 +43,8 @@ Since they cannot change state, they cannot be corrupted by thread interference 
 
 [Objects Should Be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)
 
+[Immutable class?](http://stackoverflow.com/questions/3162665/immutable-class)
+
 
 
 ---
