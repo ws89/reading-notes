@@ -234,6 +234,8 @@ public static Integer valueOf(int i) {
 
 > java.lang.Integer.IntegerCache
 
+`IntegerCache`  is similar with `ByteCache` `ShortCache` `LongCache`
+
 ```java
 private static class IntegerCache {
     static final int low = -128;
