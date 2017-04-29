@@ -24,6 +24,7 @@ Read → Think → Note → Review
    - [immutable-objects](/java/immutable-class.md)
    - [String](/java/String.md)
    - [double-equality-sign](/java/double-equality-sign.md)
+   - [primitive-data-types](/java/primitive-data-types.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
