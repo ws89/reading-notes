@@ -3,6 +3,8 @@
 - The == is a relational operator in Java that is used to compare two operands. It is used to determine whether the two operands are equal or not. 
 - Using the == operator, you can compare any primitive type such as int, char, float and Booleans. After comparison, the == operator returns a boolean value. 
 - When used with objects, the == operator compares the two object references and determines whether they refer to the same instance.
+- At run time, the result of `==` is `true` if the operand values are both `null` or both refer to the same object or array; otherwise, the result is `false`.
+  ​               
 
 
 
@@ -288,7 +290,7 @@ JDK 8 Source
 
 [Difference between parseInt and valueOf in java?](http://stackoverflow.com/questions/508665/difference-between-parseint-and-valueof-in-java)
 
-
+[15.21.3. Reference Equality Operators `==` and `!=`](http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.21.3)
 
 ---
 
