@@ -22,7 +22,7 @@ Read → Think → Note → Review
    - [Object-toString()](/java/Object-toString.md)
    - [Object-hashCode()-equals()](/java/Object-hashCode-equals.md)
    - [immutable-objects](/java/immutable-class.md)
-   - [String](/java/String.md)
+   - [string-leterial-intern](/java/string-literal-intern.md)
    - [double-equality-sign](/java/double-equality-sign.md)
    - [primitive-data-types](/java/primitive-data-types.md)
 - algorithm
