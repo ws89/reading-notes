@@ -138,8 +138,8 @@ public void concatenation3(){
         System.out.println( s3 == s3.intern() );//false ！！！！！
         System.out.println( s2 == s3.intern() );//true
 
-       /*Like this situation,if first appeared,the concatenation string(like s1、ss1、s2 above) will be as a literal,
-          otherwise it will be a plain String Object. */ 
+       /*Like this situation(in loop),if first appeared,the concatenation string(like the s1、ss1、s2 above) will be interned,
+          otherwise it will be a plain String Object. */
         System.out.println();
         i++;
     }
@@ -193,7 +193,8 @@ The runtime constant pool is a subset of the *method area* which "stores per-cla
 - Java 7 and 8 implement the string pool in the heap memory. It means that you are limited by the whole application memory for string pooling in Java 7 and 8.    
 - Use `-XX:StringTableSize` JVM parameter in Java 7 and 8 to set the string pool map size. It is fixed, because it is implemented as a hash map with lists in the buckets. Approximate the number of distinct strings in your application (which you intend to intern) and set the pool size equal to some prime number close to this value multiplied by 2 (to reduce the likelihood of collisions). It will allow `String.intern` to run in the constant time and requires a rather small memory consumption per interned string (explicitly used Java `WeakHashMap` will consume 4-5 times more memory for the same task).    
 - The default value of `-XX:StringTableSize` parameter is 1009 in Java 6 and Java 7 until Java7u40. It was increased to 60013 in Java 7u40 (same value is used in Java 8 as well).   
-- If you are not sure about the string pool usage, try `-XX:+PrintStringTableStatistics` JVM argument. It will print you the string pool usage when your program terminates.    
+- If you are not sure about the string pool usage, try `-XX:+PrintStringTableStatistics` JVM argument. It will print you the string pool usage when your program terminates. 
+- JVM string pool **is NOT thread local.** Each string added to the pool will be available to all other threads in the JVM thus further improving the program memory consumption. 
 
 
 
@@ -221,6 +222,8 @@ The runtime constant pool is a subset of the *method area* which "stores per-cla
 [Where does Java's String constant pool live, the heap or the stack?](http://stackoverflow.com/questions/4918399/where-does-javas-string-constant-pool-live-the-heap-or-the-stack)
 
 [String.intern in Java 6, 7 and 8 – string pooling](http://java-performance.info/string-intern-in-java-6-7-8/)
+
+[String.intern in Java 6, 7 and 8 – multithreaded access](http://java-performance.info/string-intern-java-6-7-8-multithreaded-access/)
 
 
 
