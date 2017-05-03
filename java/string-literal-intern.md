@@ -120,6 +120,34 @@ public void concatenation2(){
 
 
 
+```java
+@Test
+public void concatenation3(){
+    int i = 1;
+    while (i<=3){
+        String s1 = "not final String local variables " + i;
+        String ss1 = "not final String local variables " + (i+5);
+
+        System.out.println( s1 == s1.intern() );//true
+        System.out.println( ss1 == ss1.intern() );//true
+
+        String connection = " c ";
+        String s2 = "s " + connection + i;
+        String s3 = "s " + connection + i;
+        System.out.println( s2 == s2.intern() );//true
+        System.out.println( s3 == s3.intern() );//false ！！！！！
+        System.out.println( s2 == s3.intern() );//true
+
+       /*Like this situation,if first appeared,the concatenation string(like s1、ss1、s2 above) will be as a literal,
+          otherwise it will be a plain String Object. */ 
+        System.out.println();
+        i++;
+    }
+}
+```
+
+
+
 # JMM
 
 The area for storing string literals is in the [runtime constant pool](http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#22972).  
