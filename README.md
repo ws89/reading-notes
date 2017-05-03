@@ -26,6 +26,8 @@ Read → Think → Note → Review
    - [string-leterial-intern](/java/string-literal-intern.md)
    - [double-equality-sign](/java/double-equality-sign.md)
    - [primitive-data-types](/java/primitive-data-types.md)
+   - JVM
+   - [JMM-concurrency](/java/JVM-JMM-concurrency.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
