@@ -14,6 +14,7 @@ Read → Think → Note → Review
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
+   - [naming](/java/naming.md)
    - [final](/java/final.md)
    - [declaring-variables-inside-or-outside-of-a-loop](/java/declaring-variables-inside-or-outside-of-a-loop.md)
    - [volatile](/java/volatile.md)
@@ -28,7 +29,6 @@ Read → Think → Note → Review
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
-
 - data structure
    - [timing-wheel](/data-structure/timing-wheel.md)
 
