@@ -11,6 +11,7 @@ Read → Think → Note → Review
    - [sleep-wait]( /concurrency/sleep-wait.md)
    - [synchronized](/concurrency/synchronized.md)
    - [CAS(compare-and-swap)](/concurrency/compare-and-swap.md)
+   - [race-condition-critical-section](/concurrency/race-condition-critical-section.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
