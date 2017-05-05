@@ -12,6 +12,7 @@ Read → Think → Note → Review
    - [synchronized](/concurrency/synchronized.md)
    - [CAS(compare-and-swap)](/concurrency/compare-and-swap.md)
    - [race-condition-critical-section](/concurrency/race-condition-critical-section.md)
+   - [atomicity](/concurrency/atomicity.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
