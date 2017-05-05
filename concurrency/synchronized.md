@@ -1,4 +1,17 @@
-# Using
+# Overview
+
+All synchronized blocks synchronized on the same object can only have one thread executing inside them at the same time.
+
+The `synchronized` keyword can be used to mark four different types    of blocks:
+
+1. Instance methods
+2. Static methods
+3. Code blocks inside instance methods
+4. Code blocks inside static methods
+
+
+
+# Usage
 
 ### synchronized( lockObject ){ /** perform code */}
 
@@ -33,7 +46,10 @@ public void testSynchronized(){
 # References
 
 - [Synchronized Methods](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html)
+- [Java Synchronized Blocks](http://tutorials.jenkov.com/java-concurrency/synchronized.html#synchronized-keyword)
 
 ------
 
 created at 2017-03-29 21:15
+
+updated at 2017-05-05 19:46
