@@ -10,6 +10,12 @@ In ancient philosophy, an atom was the ultimate unit of matter on which more com
 
 
 
+
+> Declaring an **atomic** variable guarantees that operations made on the variable occur in an atomic fashion, i.e., that all of the substeps of the operation are completed within the thread they are executed and are not interrupted by other threads. For example, an increment-and-test operation requires the variable to be incremented and then compared to another value; an atomic operation guarantees that both of these steps will be completed **as if they were a single indivisible/uninterruptible operation**.
+
+
+
+
 # In java
 
 In programming, an *atomic* action is one that effectively happens all at once. An atomic action cannot stop in the middle: it either happens completely, or it doesn't happen at all. No side effects of an atomic action are visible until the action is complete.
@@ -56,15 +62,15 @@ private AtomicLong foo;
 
 
 
-
-
 # References
 
 [Atomic Access](https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html)
 
 [What does “atomic” mean in programming?](http://stackoverflow.com/questions/15054086/what-does-atomic-mean-in-programming)
 
+[What is the difference between atomic / volatile / synchronized?](http://stackoverflow.com/questions/9749746/what-is-the-difference-between-atomic-volatile-synchronized)
 
+[Why is i++ not atomic?](http://stackoverflow.com/questions/25168062/why-is-i-not-atomic)
 
 ---
 
