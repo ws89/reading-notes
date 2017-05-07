@@ -121,6 +121,8 @@ As soon as a thread needs to first read the value of a `volatile` variable, and 
 ![Two threads have read a shared counter variable into their local CPU caches and incremented it.](http://tutorials.jenkov.com/images/java-concurrency/java-volatile-3.png)
 
 > Thread 1 and Thread 2 are now practically out of sync. The real value of the shared `counter` variable should have been 2, but each of the threads has the value 1 for the variable in their CPU caches, and in main memory the value is still 0. It is a mess! Even if the threads eventually write their value for the shared `counter` variable back to main memory, the value will be wrong.
+>
+> You need to use a ***synchronized*** in that case to guarantee that the reading and writing of the variable is atomic.As an alternative to a `synchronized` block you could also use one of the many atomic data types found in the `java.util.concurrent` package. For instance,the `AtomicLong` or `AtomicReference` or one of the others.
 
 # Performance
 
