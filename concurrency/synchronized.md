@@ -11,6 +11,11 @@ The `synchronized` keyword can be used to mark four different types    of blocks
 
 
 
+
+> **Synchronizing** all accesses to a variable allows only a single thread at a time to access the variable, and forces all other threads to wait for that accessing thread to release its access to the variable. 
+
+
+
 # Usage
 
 ### synchronized( lockObject ){ /** perform code */}
@@ -46,7 +51,10 @@ public void testSynchronized(){
 # References
 
 - [Synchronized Methods](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html)
+
 - [Java Synchronized Blocks](http://tutorials.jenkov.com/java-concurrency/synchronized.html#synchronized-keyword)
+
+- [What is the difference between atomic / volatile / synchronized?](http://stackoverflow.com/questions/9749746/what-is-the-difference-between-atomic-volatile-synchronized)
 
 ------
 
