@@ -14,6 +14,7 @@ Read → Think → Note → Review
    - [race-condition-critical-section](/concurrency/race-condition-critical-section.md)
    - [atomicity](/concurrency/atomicity.md)
    - [multithreading](/concurrency/multithreading.md)
+   - [concurrency-models](/concurrency/concurrency-models.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
