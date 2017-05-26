@@ -81,6 +81,7 @@ after wait(). This thread would  be awakened in timeout period,then this line wo
 
 - [Object.java](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#wait())
 - [Thread.java](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#sleep(long))
+- [Difference between wait() and sleep()](https://stackoverflow.com/questions/1036754/difference-between-wait-and-sleep)
 
 ------
 
