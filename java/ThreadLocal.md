@@ -2,7 +2,7 @@
 
 The `ThreadLocal` class in Java enables you to create variables that can only be read and written by the same thread. Thus, even if two threads are executing the same code, and the code has a reference to a  `ThreadLocal` variable, then the two threads cannot see each other's `ThreadLocal` variables.
 
-# Using
+# Usage
 
 #### Initial ThreadLocal Value
 
@@ -58,12 +58,6 @@ public class ThreadLocalExample {
 # GC
 
 Each thread holds an implicit reference to its copy of a thread-local variable as long as the thread is alive and the `ThreadLocal` instance is accessible; after a thread goes away, all of its copies of thread-local instances are subject to garbage collection (unless other references to these copies exist).
-
-## InheritableThreadLocal
-
-​    The `InheritableThreadLocal` class is a subclass of `ThreadLocal`. Instead of each thread    having its own value inside a `ThreadLocal`, the `InheritableThreadLocal` grants access    to values to a thread and all child threads created by that thread.
-
-
 
 # SourceCode
 
@@ -181,11 +175,70 @@ private int expungeStaleEntry(int staleSlot) {
 }
 ```
 
+
+
+# InheritableThreadLocal
+
+The `InheritableThreadLocal` class is a subclass of `ThreadLocal`. Instead of each thread    having its own value inside a `ThreadLocal`, the `InheritableThreadLocal` grants access to values to a thread and all child threads created by that thread.
+
+## Usage
+
+```java
+@Test
+public void threadLocalTest() throws InterruptedException {
+
+    Thread parentThread = Thread.currentThread();
+    parentThread.setName( "[ParentThread]" );
+
+    ThreadLocal<String> parentThreadLocal = new ThreadLocal();
+    parentThreadLocal.set( "[Parent-Thread-Local-Content]" );
+
+    InheritableThreadLocal<String> parentInheritableThreadLocal = new InheritableThreadLocal();
+    // or ThreadLocal<String> parentInheritableThreadLocal = new InheritableThreadLocal();
+    parentInheritableThreadLocal.set( "[Parent-Inheritable-Thread-Local-Content]" );
+
+    System.out.println( Thread.currentThread().getName() + "parentThreadLocalContent ->" + parentThreadLocal.get() );
+    System.out.println( Thread.currentThread().getName() + "parentInheritableThreadLocalContent" + parentInheritableThreadLocal.get() );
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            System.out.println( Thread.currentThread().getName()
+                    + "parentThreadLocalContent from child-thread ->" + parentThreadLocal.get() );
+
+            System.out.println( Thread.currentThread().getName()
+                    + "parentInheritableThreadLocalContent from child-thread ->" + parentInheritableThreadLocal.get() );
+        }
+    };
+    Thread childThread1 = new Thread(runnable,"[Child-Thread-1]");
+    Thread childThread2 = new Thread(runnable,"[Child-Thread-2]");
+
+    childThread1.start();
+    childThread2.start();
+
+    childThread1.join();
+    childThread2.join();
+}
+/*
+output:
+[ParentThread]parentThreadLocalContent ->[Parent-Thread-Local-Content]
+[ParentThread]parentInheritableThreadLocalContent[Parent-Inheritable-Thread-Local-Content]
+[Child-Thread-1]parentThreadLocalContent from child-thread ->null
+[Child-Thread-2]parentThreadLocalContent from child-thread ->null
+[Child-Thread-2]parentInheritableThreadLocalContent from child-thread ->[Parent-Inheritable-Thread-Local-Content]
+[Child-Thread-1]parentInheritableThreadLocalContent from child-thread ->[Parent-Inheritable-Thread-Local-Content]
+*/
+```
+
+
+
 # References
 
 [Java ThreadLocal](http://tutorials.jenkov.com/java-concurrency/threadlocal.html)
 
 [Class ThreadLocal<T>](https://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html)
+
+[Java Secret: InheritableThreadLocal](http://vanillajava.blogspot.com/2011/06/jaca-secret-inheritablethreadlocal.html)
 
 
 
@@ -193,3 +246,4 @@ private int expungeStaleEntry(int staleSlot) {
 
 created at 2017-04-14 21:35
 
+updated at 2017-05-26 21:40
