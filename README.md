@@ -16,6 +16,7 @@ Read → Think → Note → Review
    - [multithreading](/concurrency/multithreading.md)
    - [concurrency-models](/concurrency/concurrency-models.md)
    - [thread-signal-wait-notify](/concurrency/thread-signal-wait-notify.md)
+   - [deadlock](/concurrency/deadlock.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
