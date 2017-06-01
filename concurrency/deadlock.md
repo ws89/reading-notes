@@ -158,12 +158,58 @@ A better option is to **determine or assign a priority of the threads so that on
 
 
 
+---
+
+# Nested Monitor Lockout
+
+## How Nested Monitor Lockout Occurs
+
+Nested monitor lockout is a problem similar to deadlock. A nested monitor lockout occurs    like this:
+
+```
+Thread 1 synchronizes on A
+Thread 1 synchronizes on B (while synchronized on A)
+Thread 1 decides to wait for a signal from another thread before continuing
+Thread 1 calls B.wait() thereby releasing the lock on B, but not A.
+
+Thread 2 needs to lock both A and B (in that sequence)
+        to send Thread 1 the signal.
+Thread 2 cannot lock A, since Thread 1 still holds the lock on A.
+Thread 2 remain blocked indefinately waiting for Thread1
+        to release the lock on A
+
+Thread 1 remain blocked indefinately waiting for the signal from
+        Thread 2, thereby
+        never releasing the lock on A, that must be released to make
+        it possible for Thread 2 to send the signal to Thread 1, etc.
+```
+
+## Nested Monitor Lockout vs. Deadlock
+
+The result of nested monitor lockout and deadlock are pretty much the same:The threads involved end up blocked forever waiting for each other.
+
+The two situations are not equal though. As explained in the text on [Deadlock](http://tutorials.jenkov.com/java-concurrency/deadlock.html) a deadlock occurs when two threads obtain locks in different order. Thread 1 locks A, waits for B. Thread 2 has locked B, and now waits for A. As explained in the text on  [Deadlock Prevention](http://tutorials.jenkov.com/java-concurrency/deadlock-prevention.html) deadlocks can be avoided by always locking the locks in the same order (Lock Ordering). However, a nested monitor lockout occurs exactly by two threads taking the locks **in the same order**. Thread 1 locks A and B, then releases B and waits for a signal from Thread 2. Thread 2 needs both A and B to send Thread 1 the signal. So, one thread is waiting for a signal, and another for a lock to be released.
+
+The difference is summed up here:
+
+```
+In deadlock, two threads are waiting for each other to release locks.
+
+In nested monitor lockout, Thread 1 is holding a lock A, and waits
+for a signal from Thread 2. Thread 2 needs the lock A to send the
+signal to Thread 1.
+```
+
+
+
 # References
 
 [Deadlock](http://tutorials.jenkov.com/java-concurrency/deadlock.html)
 
-
+[Nested Monitor Lockout](http://tutorials.jenkov.com/java-concurrency/nested-monitor-lockout.html)
 
 ---
 
 created at 2017-05-27 17:13
+
+updated at 2017-06-01 14:24
