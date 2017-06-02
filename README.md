@@ -18,6 +18,7 @@ Read → Think → Note → Review
    - [thread-signal-wait-notify](/concurrency/thread-signal-wait-notify.md)
    - [deadlock](/concurrency/deadlock.md)
    - [starvation-and-fairness](/concurrency/starvation-and-fairness.md)
+   - [locks-in-java](/concurrency/locks-in-java.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
