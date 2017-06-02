@@ -19,7 +19,7 @@ Read → Think → Note → Review
    - [deadlock](/concurrency/deadlock.md)
    - [starvation-and-fairness](/concurrency/starvation-and-fairness.md)
    - [locks-in-java](/concurrency/locks-in-java.md)
-   - [block-queues](/concurrency/block-queues.md)
+   - [blocking-queues](/concurrency/blocking-queues.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
