@@ -20,6 +20,7 @@ Read → Think → Note → Review
    - [starvation-and-fairness](/concurrency/starvation-and-fairness.md)
    - [locks-in-java](/concurrency/locks-in-java.md)
    - [blocking-queues](/concurrency/blocking-queues.md)
+   - [thread-pools](/concurrency/thread-pools.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
