@@ -244,12 +244,168 @@ If you want to shut down the `ExecutorService` immediately, you can call the `sh
 
 
 
+# ThreadPoolExecutor
+
+The `java.util.concurrent.ThreadPoolExecutor` is an implementation of the [`ExecutorService`](http://tutorials.jenkov.com/java-util-concurrent/executorservice.html) interface. The `ThreadPoolExecutor` executes the given task (`Callable` or `Runnable`) using one of its internally pooled threads.
+
+The thread pool contained inside the `ThreadPoolExecutor` can contain a varying amount of threads. The number of threads in the pool is determined by these variables:
+
+- `corePoolSize`
+- `maximumPoolSize`
+
+If less than `corePoolSize` threads are created in the the thread pool when a task is delegated to the thread pool, then **a new thread is created, even if idle threads exist in the pool**.
+
+If the internal queue of tasks is full, and `corePoolSize` threads or more are running, but less than `maximumPoolSize` threads are running, then a new thread is created to execute the task.
+
+![A ThreadPoolExecutor.](http://tutorials.jenkov.com/images/java-concurrency-utils/thread-pool-executor.png)
+
+## Creating a ThreadPoolExecutor
+
+The `ThreadPoolExecutor` has several constructors available. For instance:
+
+```java
+int  corePoolSize  =    5;
+int  maxPoolSize   =   10;
+long keepAliveTime = 5000;
+
+ExecutorService threadPoolExecutor =
+        new ThreadPoolExecutor(
+                corePoolSize,
+                maxPoolSize,
+                keepAliveTime,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>()
+                );
+```
+
+
+
+# ScheduledExecutorService
+
+The `java.util.concurrent.ScheduledExecutorService` is an [`ExecutorService`](http://tutorials.jenkov.com/java-util-concurrent/executorservice.html) which can schedule tasks to run after a delay, or to execute repeatedly with a fixed interval of time in between each execution. Tasks are executed asynchronously by a worker thread, and not by the thread handing the task to the `ScheduledExecutorService`.
+
+## Example
+
+```java
+ScheduledExecutorService scheduledExecutorService =
+        Executors.newScheduledThreadPool(5);
+
+ScheduledFuture scheduledFuture =
+    scheduledExecutorService.schedule(new Callable() {
+        public Object call() throws Exception {
+            System.out.println("Executed!");
+            return "Called!";
+        }
+    },
+    5,
+    TimeUnit.SECONDS);
+```
+
+First a `ScheduledExecutorService` is created with 5 threads in. Then an anonymous  implementation of the `Callable` interface is created and passed to the `schedule()` method. The two last parameters specify that the `Callable` should be executed after 5 seconds.
+
+## Implementations
+
+Since `ScheduledExecutorService` is an interface, you will have to use its implementation in the `java.util.concurrent` package, in order to use it. `ScheduledExecutorService` as the following implementation:
+
+- ScheduledThreadPoolExecutor
+
+## Creating a ScheduledExecutorService
+
+How you create an `ScheduledExecutorService` depends on the implementation you use. However,    you can use the `Executors` factory class to create `ScheduledExecutorService`    instances too. Here is an example:
+
+```java
+ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+```
+
+## Usage
+
+Once you have created a `ScheduledExecutorService` you use it by calling one of its methods:
+
+- schedule (Callable task, long delay, TimeUnit timeunit)
+- schedule (Runnable task, long delay, TimeUnit timeunit)
+- scheduleAtFixedRate (Runnable, long initialDelay, long period, TimeUnit timeunit)
+- scheduleWithFixedDelay (Runnable, long initialDelay, long period, TimeUnit timeunit)
+
+### schedule (Callable task, long delay, TimeUnit timeunit)
+
+This method schedules the given `Callable` for execution after the given delay.
+
+The method returns a `ScheduledFuture` which you can use to either cancel the task before it has started executing, or obtain the result once it is executed.
+
+```java
+ScheduledExecutorService scheduledExecutorService =
+        Executors.newScheduledThreadPool(5);
+
+ScheduledFuture scheduledFuture =
+    scheduledExecutorService.schedule(new Callable() {
+        public Object call() throws Exception {
+            System.out.println("Executed!");
+            return "Called!";
+        }
+    },
+    5,
+    TimeUnit.SECONDS);
+
+System.out.println("result = " + scheduledFuture.get());
+
+scheduledExecutorService.shutdown();
+```
+
+This example outputs:
+
+```
+Executed!
+result = Called!
+```
+
+
+
+### schedule (Runnable task, long delay, TimeUnit timeunit)
+
+This method works like the method version taking a `Callable` as parameter, except a `Runnable` cannot return a value, so the `ScheduledFuture.get()` method returns null when the task is finished.
+
+
+
+### scheduleAtFixedRate (Runnable, long initialDelay, long period, TimeUnit timeunit)
+
+This method schedules a task to be executed periodically. The task is executed the first time after the `initialDelay`, and then recurringly every time the `period`    expires.
+
+If any execution of the given task throws an exception, the task is no longer executed. If  no exceptions are thrown, the task will continue to be executed until the `ScheduledExecutorService`  is shut down.
+
+**If a task takes longer to execute than the period between its scheduled executions, the next execution will start after the current execution finishes. The scheduled task will not be executed by more than one thread at a time.**
+
+
+
+### scheduleWithFixedDelay (Runnable, long initialDelay, long period, TimeUnit timeunit)
+
+This method works very much like `scheduleAtFixedRate()` except that the `period`    is interpreted differently.
+
+In the `scheduleAtFixedRate()` method the `period`    is interpreted as a delay between the start of the previous execution, until the start of the next execution.
+
+In this method, however, the `period` is interpreted as the delay between the **end** of the    previous execution, until the start of the next. The delay is thus between finished executions, not between    the beginning of executions.
+
+
+
+## Shutdown
+
+Just like an `ExecutorService`, the `ScheduledExecutorService` needs to be shut down when you are finished using it. If not, it will keep the JVM running, even when all other threads    have been shut down.
+
+You shut down a `ScheduledExecutorService` using the `shutdown()` or `shutdownNow()`  methods which are inherited from the `ExecutorService` interface. See the    [ExecutorService Shutdown](http://tutorials.jenkov.com/java-util-concurrent/executorservice.html#executorservice-shutdown) section for more information.
+
+
+
 # References
 
 [Thread Pools](http://tutorials.jenkov.com/java-concurrency/thread-pools.html)
 
 [ExecutorService](http://tutorials.jenkov.com/java-util-concurrent/executorservice.html)
 
+[ThreadPoolExecutor](http://tutorials.jenkov.com/java-util-concurrent/threadpoolexecutor.html)
+
+[ScheduledExecutorService](http://tutorials.jenkov.com/java-util-concurrent/scheduledexecutorservice.html)
+
 ---
 
 created at 2017-06-02 20:34
+
+updated at 2017-06-04 16:15
