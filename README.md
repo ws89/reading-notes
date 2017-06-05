@@ -22,6 +22,7 @@ Read → Think → Note → Review
    - [blocking-queues](/concurrency/blocking-queues.md)
    - [thread-pools](/concurrency/thread-pools.md)
    - [ForkJoinPool](/concurrency/ForkJoinPool.md)
+   - [anatomy-of-a-synchronizer](/concurrency/anatomy-of-a-synchronizer.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
