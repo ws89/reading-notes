@@ -10,6 +10,7 @@ Read → Think → Note → Review
    - [thread-lifecycle-in-java](concurrency/thread-lifecycle-in-java.md)
    - [sleep-wait]( /concurrency/sleep-wait.md)
    - [synchronized](/concurrency/synchronized.md)
+   - [volatile](/java/volatile.md)
    - [CAS(compare-and-swap)](/concurrency/compare-and-swap.md)
    - [race-condition-critical-section](/concurrency/race-condition-critical-section.md)
    - [atomicity](/concurrency/atomicity.md)
@@ -23,13 +24,13 @@ Read → Think → Note → Review
    - [thread-pools](/concurrency/thread-pools.md)
    - [ForkJoinPool](/concurrency/ForkJoinPool.md)
    - [anatomy-of-a-synchronizer](/concurrency/anatomy-of-a-synchronizer.md)
+   - [non-blocking-algorithms](/concurrency/non-blocking-algorithms.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
    - [naming](/java/naming.md)
    - [final](/java/final.md)
    - [declaring-variables-inside-or-outside-of-a-loop](/java/declaring-variables-inside-or-outside-of-a-loop.md)
-   - [volatile](/java/volatile.md)
    - [ThreadLocal](/java/ThreadLocal.md)
    - [WeakReference](/java/WeakReference.md)
    - [Object-toString()](/java/Object-toString.md)
