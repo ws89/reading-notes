@@ -26,6 +26,7 @@ Read → Think → Note → Review
    - [anatomy-of-a-synchronizer](/concurrency/anatomy-of-a-synchronizer.md)
    - [non-blocking-algorithms](/concurrency/non-blocking-algorithms.md)
    - [amdahl-law](/concurrency/amdahl-law.md)
+   - [CountDownLatch](/concurrency/CountDownLatch.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
