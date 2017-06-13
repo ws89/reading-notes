@@ -49,6 +49,8 @@ Read → Think → Note → Review
    - [primitive-data-types](/java/primitive-data-types.md)
    - JVM
    - [JMM-concurrency](/java/JVM-JMM-concurrency.md)
+   - -
+   - [generic](/java/generic.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
