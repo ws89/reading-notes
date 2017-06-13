@@ -32,6 +32,7 @@ Read → Think → Note → Review
    - [Semaphore](/concurrency/Semaphore.md)
    - [ReadWriteLock](/concurrency/ReadWriteLock.md)
    - [AtomicInteger](/concurrency/AtomicInteger.md)
+   - [AtomicReference-and-AtomicStampedReference](/concurrency/AtomicReference.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
