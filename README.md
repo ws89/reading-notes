@@ -27,6 +27,7 @@ Read → Think → Note → Review
    - [non-blocking-algorithms](/concurrency/non-blocking-algorithms.md)
    - [amdahl-law](/concurrency/amdahl-law.md)
    - [CountDownLatch](/concurrency/CountDownLatch.md)
+   - [CyclicBarrier](/concurrency/CyclicBarrier.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
