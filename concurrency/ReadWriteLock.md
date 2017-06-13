@@ -14,7 +14,6 @@ The main differences between a `Lock` and a synchronized block are:
 
 - The synchronized block must be fully contained within a single method. A `Lock` can have it's calls to `lock()` and `unlock()`  in separate methods.  
 
-    
 
 # ReadWriteLock
 
@@ -24,7 +23,7 @@ The idea is, that multiple threads can read from a shared resource without causi
 
 ## ReadWriteLock Locking Rules
 
-| **Read Lock   **                         | Write Lock                               |
+| Read Lock                                | Write Lock                               |
 | ---------------------------------------- | ---------------------------------------- |
 | If no threads have locked the `ReadWriteLock` for writing, and no thread have requested a write lock (but not yet obtained it). Thus, multiple threads can lock the lock for reading. | If no threads are reading or writing. Thus, only one thread at a time can lock the lock for writing. |
 
