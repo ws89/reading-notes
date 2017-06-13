@@ -31,6 +31,7 @@ Read → Think → Note → Review
    - [Exchanger](/concurrency/Exchanger.md)
    - [Semaphore](/concurrency/Semaphore.md)
    - [ReadWriteLock](/concurrency/ReadWriteLock.md)
+   - [AtomicInteger](/concurrency/AtomicInteger.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
