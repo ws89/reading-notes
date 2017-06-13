@@ -28,6 +28,7 @@ Read → Think → Note → Review
    - [amdahl-law](/concurrency/amdahl-law.md)
    - [CountDownLatch](/concurrency/CountDownLatch.md)
    - [CyclicBarrier](/concurrency/CyclicBarrier.md)
+   - [Exchanger](/concurrency/Exchanger.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
