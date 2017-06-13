@@ -35,26 +35,24 @@ int theValue = atomicInteger.get();
 
 You can set the value of an `AtomicInteger` instance via the `set()` method.    Here is an `AtomicInteger.set()` example:
 
-```
+```java
 AtomicInteger atomicInteger = new AtomicInteger(123);
 
 atomicInteger.set(234);
-
 ```
 
-​    This example creates an `AtomicInteger` example with an initial value of 123, and then sets its    value to `234` in the next line.
+This example creates an `AtomicInteger` example with an initial value of 123, and then sets its    value to `234` in the next line.
 
 ## Compare and Set the AtomicInteger Value
 
 The `AtomicInteger` class also has an atomic `compareAndSet()` method. This method    compares the current value of the `AtomicInteger` instance to an expected value, and if the two    values are equal, sets a new value for the `AtomicInteger` instance. Here is an    `AtomicInteger.compareAndSet()` example:
 
-```
+```java
 AtomicInteger atomicInteger = new AtomicInteger(123);
 
 int expectedValue = 123;
 int newValue      = 234;
 atomicInteger.compareAndSet(expectedValue, newValue);
-
 ```
 
 This example first creates an `AtomicInteger` instance with an initial value of `123` .    Then it compares the value of the `AtomicInteger` to the expected value `123` and    if they are equal the new value of the `AtomicInteger` becomes `234`;
@@ -70,13 +68,12 @@ The `AtomicInteger` class contains a few methods you can use to add a value to t
 
 The first method, `addAndGet()` adds a number to the `AtomicInteger` and returns its value    after the addition. The second method, `getAndAdd()` also adds a number to the `AtomicInteger`    but returns the value the `AtomicInteger` had before the value was added. Which of these two methods    you should use depends on your use case. Here are two examples:
 
-```
+```java
 AtomicInteger atomicInteger = new AtomicInteger();
 
 
 System.out.println(atomicInteger.getAndAdd(10));
 System.out.println(atomicInteger.addAndGet(10));
-
 ```
 
 This example will print out the values `0` and `20`. First the example gets the value    of the `AtomicInteger` before adding 10 to. Its value before addition is 0. Then the example    adds 10 to the `AtomicInteger` and gets the value after the addition. The value is now 20.
