@@ -29,6 +29,7 @@ Read → Think → Note → Review
    - [CountDownLatch](/concurrency/CountDownLatch.md)
    - [CyclicBarrier](/concurrency/CyclicBarrier.md)
    - [Exchanger](/concurrency/Exchanger.md)
+   - [Semaphore](/concurrency/Semaphore.md)
 - design pattern
    - [singleton](/design-pattern/singleton.md)
 - java
