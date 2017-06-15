@@ -51,6 +51,7 @@ Read → Think → Note → Review
      - [JMM-concurrency](/java/JVM-JMM-concurrency.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
+   - [lambda](/java/lambda.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
