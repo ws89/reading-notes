@@ -53,6 +53,7 @@ Read → Think → Note → Review
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
    - [lambda](/java/lambda.md)
    - [interface](/java/interface.md)
+   - [abstract-class](/java/abstract-class.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
