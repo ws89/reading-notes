@@ -366,7 +366,7 @@ class InterfaceFGImpl implements InterfaceF,InterfaceG{
 
 ## Interfaces and Polymorphism
 
-Java interfaces are a way to achieve polymorphism. Polymorphism is a concept that takes some practice and thought to master. Basically, polymorphism means that an instance of an class (an object) can be used as if it were of different types. Here, a type means either a class or an interface.
+Java interfaces are a way to achieve polymorphism. Polymorphism is a concept that takes some practice and thought to master. Basically, **polymorphism means that an instance of an class (an object) can be used as if it were of different types.** Here, a type means either a class or an interface.
 
 | ![Two parallel class hierarchies used in the same application.](http://tutorials.jenkov.com/images/java/interfaces-1.png) |
 | ---------------------------------------- |
