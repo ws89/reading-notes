@@ -58,6 +58,7 @@ Read → Think → Note → Review
    - [enum](/java/enum.md)
    - [annotation](/java/annotation.md)
    - [access-modifier](/java/access-modifier.md)
+   - [nested-class](/java/nested-class.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
