@@ -61,7 +61,7 @@ Read → Think → Note → Review
    - [nested-class](/java/nested-class.md)
    - IO
      - [io-overview](/java/io/io-overview.md)
-     - [io-pipes](/java/io/pipes.md)
+     - [io-pipes](/java/io/io-pipes.md)
 
 
 - algorithm
