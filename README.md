@@ -57,6 +57,7 @@ Read → Think → Note → Review
    - [interface-vs-abstract-class](/java/interface-vs-abstract-class.md)
    - [enum](/java/enum.md)
    - [annotation](/java/annotation.md)
+   - [access-modifier](/java/access-modifier.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
