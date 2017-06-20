@@ -55,6 +55,7 @@ Read → Think → Note → Review
    - [interface](/java/interface.md)
    - [abstract-class](/java/abstract-class.md)
    - [interface-vs-abstract-class](/java/interface-vs-abstract-class.md)
+   - [enum](/java/enum.md)
 - algorithm
    - [sorting](/algorithm/sort.md)
    - [token-bucket-and-leaky-bucket](/algorithm/token-bucket-and-leaky-bucket.md)
