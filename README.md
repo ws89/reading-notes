@@ -62,6 +62,7 @@ Read → Think → Note → Review
    - IO
      - [io-overview](/java/io/io-overview.md)
      - [io-pipes](/java/io/io-pipes.md)
+   - [inheritance](/java/inheritance.md)
 
 
 - algorithm
