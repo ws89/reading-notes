@@ -110,13 +110,24 @@ Redis sorted sets use a *double 64-bit floating point number* to represent the s
 
 Every hash can store up to 2^32 - 1 field-value pairs (more than 4 billion).
 
+Redis Hashes are maps between string fields and string values, so they are the perfect data type to represent objects (e.g. A User with a number of fields like name, surname, age, and so forth).
+
 **practice:**
 
 - HMSET 
 - HGETALL 
 - HSET 
 - HGET 
-- ​
+- HDEL 
+- HEXISTS 
+- HINCRBY 
+- HINCRBYFLOAT 
+- HKEYS 
+- HLEN 
+- HMGET 
+- HSETNX 
+- HSTRLEN 
+- HVALS 
 
 
 
