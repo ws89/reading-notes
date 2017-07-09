@@ -89,6 +89,35 @@ The max number of members in a set is 2^32 - 1 (4294967295, more than 4 billion 
 
 
 
+## Sorted Set
+
+Redis sorted sets use a *double 64-bit floating point number* to represent the score. 
+
+**practice:**
+
+- ZRANGE
+- ZREVRANGE 
+- ZINCRBY 
+- ZSCORE 
+- ZADD 
+- ZRANK 
+- ZREVRANK 
+- ​
+
+
+
+## Hash
+
+Every hash can store up to 2^32 - 1 field-value pairs (more than 4 billion).
+
+**practice:**
+
+- HMSET 
+- HGETALL 
+- HSET 
+- HGET 
+- ​
+
 
 
 
