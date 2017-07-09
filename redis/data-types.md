@@ -67,6 +67,7 @@ A few things to note about [BRPOP](https://redis.io/commands/brpop):
 
 
 
+
 ## Sets
 
 Redis Sets have the desirable property of not allowing repeated members. Adding the same element multiple times will result in a set having a 
@@ -78,12 +79,22 @@ The max number of members in a set is 2^32 - 1 (4294967295, more than 4 billion 
 
 - SADD
 - SMEMBERS 
+- SINTER 
+- SPOP 
+- SRANDMEMBER
+- SUNION
+- SUNIONSTORE 
+- SCARD 
+
+
+
+
 
 
 
 ## Common Commands 
 
-### Practice
+**Practice:**
 
 - TTL
 - PTTL
