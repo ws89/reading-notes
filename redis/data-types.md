@@ -93,6 +93,8 @@ The max number of members in a set is 2^32 - 1 (4294967295, more than 4 billion 
 
 Redis sorted sets use a *double 64-bit floating point number* to represent the score. 
 
+Sorted sets are implemented via a dual-ported data structure containing both a skip list and a hash table, so every time we add an element Redis performs an O(log(N)) operation.
+
 **practice:**
 
 - ZRANGE
@@ -102,7 +104,22 @@ Redis sorted sets use a *double 64-bit floating point number* to represent the s
 - ZADD 
 - ZRANK 
 - ZREVRANK 
-- ​
+- ZCARD 
+- ZCOUNT 
+- ZUNIONSTORE 
+- ZINTERSTORE 
+- ZLEXCOUNT 
+- [ZRANGEBYLEX](http://www.redis.cn/commands/zrangebylex.html) 
+- ZRANGEBYSCORE
+- ZREM 
+- ZREMRANGEBYLEX 
+- ZREMRANGEBYRANK 
+- ZREMRANGEBYSCORE 
+- ZREVRANGE 
+- ZREVRANGEBYLEX 
+- ZREVRANGEBYSCORE 
+
+
 
 
 
@@ -149,6 +166,10 @@ Redis Hashes are maps between string fields and string values, so they are the p
 [Data types](https://redis.io/topics/data-types)
 
 [An introduction to Redis data types and abstractions](https://redis.io/topics/data-types-intro)
+
+[Inclusive in math](http://www.mathwords.com/i/inclusive.htm)
+
+[ZRANGEBYLEX ](http://www.redis.cn/commands/zrangebylex.html)
 
 ---
 
