@@ -76,6 +76,8 @@ Read → Think → Note → Review
    - [Red-Black Tree](/data-structure/red-black-tree.md)
 - distributed
   - [API-rate-limiting](/distribution/api-rate-limiting.md)
+- os
+   - [kernel](/os/kernel.md)
 
 
 ---
