@@ -61,7 +61,7 @@ Read → Think → Note → Review
    - [nested-class](/java/nested-class.md)
    - IO
      - [io-models](/java/io/io-models.md)
-     - [io-hardware-software](/java/io-hardware-software.md)
+     - [io-hardware-software](/java/io/io-hardware-software.md)
      - [io-overview](/java/io/io-overview.md)
      - [io-pipes](/java/io/io-pipes.md)
    - [inheritance](/java/inheritance.md)
