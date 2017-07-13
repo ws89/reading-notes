@@ -9,16 +9,31 @@ A String value can be at max 512 Megabytes in length.
 **Practice:**
 
 - INCR -*[ rate limiter ]*
+- INCRBY
+- INCRBYFLOAT 
 
 
 - DECR 
-- INCRBY
+- DECRBY 
+- GET 
 - GETRANGE
 - SETRANGE
 - APPEND
 - [GETBIT/SETBIT](https://www.zhihu.com/question/27672245)
 - GETSET
+- MGET
 - MSET
+- MSETNX 
+- PSETEX 
+- SET 
+- SETEX 
+- SETNX 
+- SETRANGE 
+- STRLEN 
+
+
+- *BITCOUNT*...
+- ​
 
 
 
@@ -41,17 +56,23 @@ Redis lists are implemented via Linked Lists. This means that even if you have m
 
 **practice:**
 
-- LPUSH 
 - RPUSH 
-- LRANGE 
-- LTRIM 
-- LPOP 
-- RPOP
 - BLPOP
+- RPOP
+- BRPOP
 - [RPOPLPUSH](https://redis.io/commands/rpoplpush)
 - BRPOPLPUSH
+- LINDEX 
+- LINSERT 
+- LLEN
+- LPOP 
+- LPUSH 
+- LPUSHX 
+- LRANGE 
 - LREM 
-- LLEN 
+-  LSET 
+- LTRIM 
+
 
 
 
@@ -78,13 +99,23 @@ The max number of members in a set is 2^32 - 1 (4294967295, more than 4 billion 
 **Practice:**
 
 - SADD
-- SMEMBERS 
+- SCARD 
+- SDIFF 
+- SDIFFSTORE 
+
+
 - SINTER 
+- SINTERSTORE 
+- SISMEMBER 
+- SMEMBERS 
+- SMOVE 
 - SPOP 
 - SRANDMEMBER
+- SREM 
 - SUNION
 - SUNIONSTORE 
-- SCARD 
+
+
 
 
 
