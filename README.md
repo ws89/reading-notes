@@ -81,7 +81,7 @@ Read → Think → Note → Review
 - redis
    - [redis-key-descprition](/redis/redis-keys.md)
    - [data-types](/redis/data-types.md)
-   - [transaction](/redis/transacation.md)
+   - [transaction](/redis/transaction.md)
    - [some-questions](/redis/questions.md)
 
 
