@@ -78,6 +78,11 @@ Read → Think → Note → Review
   - [API-rate-limiting](/distribution/api-rate-limiting.md)
 - os
    - [kernel](/os/kernel.md)
+- redis
+   - [redis-key-descprition](/redis/redis-keys.md)
+   - [data-types](/redis/data-types.md)
+   - [transaction](/redis/transacation.md)
+   - [some-questions](/redis/questions.md)
 
 
 ---
