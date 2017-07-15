@@ -3,6 +3,15 @@
 - BGSAVE
 - SAVE
 - LASTSAVE
+- BGREWRITEAOF
+
+
+
+
+
+
+
+
 
 
 
