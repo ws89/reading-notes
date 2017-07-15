@@ -105,6 +105,25 @@ So Redis supports an interesting feature: it is able to rebuild the AOF in the b
 
 
 
+#### Automatic rewrite of the append only file
+
+Redis is able to automatically rewrite the log file implicitly calling BGREWRITEAOF when the AOF log size grows by the specified percentage.
+
+This is how it works: Redis remembers the size of the AOF file after the latest rewrite (if no rewrite has happened since the restart, the size of the AOF at startup is used).
+
+This base size is compared to the current size. If the current size is bigger than the specified percentage, the rewrite is triggered. Also you need to specify a minimal size for the AOF file to be rewritten, this is useful to avoid rewriting the AOF file even if the percentage increase is reached but it is still pretty small.
+
+Specify a percentage of zero in order to disable the automatic AOF rewrite feature.
+
+> default config from  `redis.windows.conf`
+
+```
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+```
+
+
+
 ### How durable is the append only file?
 
 You can configure how many times Redis will [`fsync`](http://linux.die.net/man/2/fsync) data on disk. There are three options:
@@ -200,6 +219,8 @@ This means that copying the RDB file is completely safe while the server is runn
 # References
 
 [Redis Persistence](https://redis.io/topics/persistence)
+
+Configuration File : redis.windows.conf
 
 ---
 
