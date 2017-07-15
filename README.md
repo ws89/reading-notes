@@ -83,6 +83,8 @@ Read → Think → Note → Review
    - [data-types](/redis/data-types.md)
    - [transaction](/redis/transaction.md)
    - [some-questions](/redis/questions.md)
+   - [persistence](/redis/persistence.md)
+   - [commands](/redis/commands.md)
 
 
 ---
