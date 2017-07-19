@@ -110,6 +110,48 @@ After node timeout has elapsed, a master node is considered to be failing, and c
 
 
 
+# Redis Cluster configuration parameters
+
+We are about to create an example cluster deployment. Before we continue,            let's introduce the configuration parameters that Redis Cluster introduces            in the `redis.conf` file. Some will be obvious, others will be more clear            as you continue reading.
+
+- **cluster-enabled <yes/no>**: If yes enables Redis Cluster support in a specific Redis instance. Otherwise the instance starts as a stand alone instance as usually.
+
+- **cluster-config-file <filename>**: Note that despite the name of this option, this is not an user editable configuration file, but the file where a Redis Cluster node automatically persists the cluster configuration (the state, basically) every time there is a change, in order to be able to re-read it at startup. The file lists things like the other nodes in the cluster, their state, persistent variables, and so forth. Often this file is rewritten and flushed on disk as a result of some message reception.
+
+- **cluster-node-timeout <milliseconds>**: The maximum amount of time a Redis Cluster node can be unavailable, without it being considered as failing. If a master node is not reachable for more than the specified amount of time, it will be failed over by its slaves. This parameter controls other important things in Redis Cluster. Notably, every node that can't reach the majority of master nodes for the specified amount of time, will stop accepting queries.
+
+- **cluster-slave-validity-factor <factor>**: If set to zero, a slave will always try to failover a master, regardless of the amount of time the link between the master and the slave remained disconnected. If the value is positive, a maximum disconnection time is calculated as the *node timeout* value multiplied by the factor provided with this option, and if the node is a slave, it will not try to start a failover if the master link was disconnected for more than the specified amount of time. For example if the node timeout is set to 5 seconds, and the validity factor is set to 10, a slave disconnected from the master for more than 50 seconds will not try to failover its master. Note that any value different than zero may result in Redis Cluster to be unavailable after a master failure if there is no slave able to failover it. In that case the cluster will return back available only when the original master rejoins the cluster.
+
+  - > redis.windwos.conf
+
+    ```
+    #    If the last interaction is too old, the slave will not try to failover
+    #    at all.
+    #
+    # The point "2" can be tuned by user. Specifically a slave will not perform
+    # the failover if, since the last interaction with the master, the time
+    # elapsed is greater than:
+    #
+    #   (node-timeout * slave-validity-factor) + repl-ping-slave-period
+    #
+    # So for example if node-timeout is 30 seconds, and the slave-validity-factor
+    # is 10, and assuming a default repl-ping-slave-period of 10 seconds, the
+    # slave will not try to failover if it was not able to talk with the master
+    # for longer than 310 seconds.
+
+    # A large slave-validity-factor may allow slaves with too old data to failover
+    # a master, while a too small value may prevent the cluster from being able to
+    # elect a slave at all.
+    ```
+
+- **cluster-migration-barrier <count>**: Minimum number of slaves a master will remain connected with, for another slave to migrate to a master which is no longer covered by any slave. See the appropriate section about replica migration in this tutorial for more information.
+
+- **cluster-require-full-coverage <yes/no>**: If this is set to yes, as it is by default, the cluster stops accepting writes if some percentage of the key space is not covered by any node. If the option is set to no, the cluster will still serve queries even if only requests about a subset of keys can be processed.
+
+
+
+
+
 # References
 
 [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial)
