@@ -45,8 +45,41 @@ Suppose we add a new cache and thereby bump up n from 100 to 101.  For an object
 
 ## Consistent Hashing
 
+![](/attachments/algorithm/consistent-hashing-figure-2.png)
 
 
+![](/attachments/algorithm/consistent-hashing-figure-3.png)
+
+
+The key idea is:  in addition to hashing the names of all objects (URLs) x , like before, we also hash the names of all the servers s .  The object and server names need to be hashed to the same range, such as 32-bit values.
+
+To understand which objects are assigned to which servers, consider the array shown in Figure 2, indexed by the possible hash values.  (This array might be very big and it exists only  in  our  minds;  we’ll  discuss  the  actual  implementation  shortly.)   Imagine  that  we’ve already hashed all the server names and made a note of them in the corresponding buckets. Given an object x that hashes to the bucket h(x), we scan buckets to the right of h(x) until we find a bucket h(s) to which the name of some server s hashes.  (We wrap around the array, if need be.)  We then designate s as the server responsible for the object x .
+
+This approach to consistent hashing can also be visualized on a circle, with points on the circle corresponding to the possible hash values (Figure 3(left)).  Servers and objects both hash to points on this circle; an object is stored on the server that is closest in the clockwise direction.  Thus n servers partition the circle into n segments, with each server responsible for all objects in one of these segments.
+
+This simple idea leads to some nice properties.  First, assuming reasonable hash functions, by symmetry, the expected load on each of the n servers is exactly a 1/n fraction of the objects. (There is non-trivial variance; below we explain how to reduce it via replication.)  Second, and more importantly, suppose we add a new server s — which objects have to move? Only the objects stored at s . See Figure 3(right).  Combined, these  two observations imply that, in  expectation,  adding  the *n*th  server  causes  only  a 1/n fraction  of  the  objects  to  relocate. This  is  the  best-case  scenario  if  we  want  the  load  to  be  distributed  evenly  —  clearly  the objects on the new server have to move from where they were before.  By contrast, with the solution (1), on average only a 1/n fraction of the objects don’t move when the *n*th server is added!
+
+
+
+So how do we actually implement the standard hash table operations Lookup and Insert? Given an object x , both operations boil down to the problem of efficiently implementing the rightward/clockwise scan for the server s that minimizes h(s) subject to h(s) ≥ h(x). Thus,we want a data structure for storing the server names, with the corresponding hash values as keys, that supports a fast Successor operation.  A hash table isn’t good enough (it doesn’t maintain any order information at all); a heap isn’t good enough (it only maintains a partial order  so  that  identifying  the  minimum  is  fast);  but  recall  that ***binary search trees*** ,  which maintain a total ordering of the stored elements, do export a Successor function. Since the running time of this operation is linear in the depth of the tree, it’s a good idea to use a balanced binary search tree,  such as a **Red-Black tree**.  Finding the server responsible for storing a given object x then takes O(logn) time, where n is the number of servers.
+
+
+
+### Reducing the variance / virtual  copies
+
+![](/attachments/algorithm/consistent-hashing-figure-4.png)
+
+While the expected load of each server is a 1/n fraction of the objects, the realized load of each server will vary.  Pictorially, if you pick n random points on  the  circle,  you’re  very  unlikely  to  get  a  perfect  partition  of  the  circle  into  equal-sized segments.
+
+An  easy  way  to  decrease  this  variance  is  to  make k “**virtual  copies**”  of  each  server s , implemented  by  hashing  its  name  with k different  hash  functions  to  get h1(s), . . . , hk(s).
+
+or example,  with servers {0,1,2} and k= 4, we choose 12 points on the circle — 4 labeled “0”, 4 labeled “1”, and 4 labeled “2”.(See Figure 4.)  Objects are assigned as before — from h(x), we scan rightward/clockwise until we encounter one of the hash values of some server s , and s is responsible for storing x.
+
+
+
+By symmetry, each server still expects to get a 1/n fraction of the objects.  This replication increases the number of keys stored in the balanced binary search by a factor of k , but it reduces the variance in load across servers significantly.  Intuitively, some copies of a server will  get  more  objects  than  expected  (more  than  a 1/kn fraction),  but  this  will  be  largely canceled  out  by  other  copies  that  get  fewer  objects  than  expected. Choosing k≈$\log_2n$ is  large  enough  to  obtain  reasonably  balanced  loads.  
+
+Virtual copies are also useful for dealing with heterogeneous servers that have different capacities.  The sensible approach is to make the number of virtual copies of a server proportional to the server capacity; for example, if one server is twice as big as another, it should have twice as many virtual copies.
 
 
 
