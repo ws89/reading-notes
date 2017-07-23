@@ -77,7 +77,7 @@ or example,  with servers {0,1,2} and k= 4, we choose 12 points on the circle �
 
 
 
-By symmetry, each server still expects to get a 1/n fraction of the objects.  This replication increases the number of keys stored in the balanced binary search by a factor of k , but it reduces the variance in load across servers significantly.  Intuitively, some copies of a server will  get  more  objects  than  expected  (more  than  a 1/kn fraction),  but  this  will  be  largely canceled  out  by  other  copies  that  get  fewer  objects  than  expected. Choosing k≈$\log_2n$ is  large  enough  to  obtain  reasonably  balanced  loads.  
+By symmetry, each server still expects to get a 1/n fraction of the objects.  This replication increases the number of keys stored in the balanced binary search by a factor of k , but it reduces the variance in load across servers significantly.  Intuitively, some copies of a server will  get  more  objects  than  expected  (more  than  a 1/kn fraction),  but  this  will  be  largely canceled  out  by  other  copies  that  get  fewer  objects  than  expected. Choosing k≈$ \log_2 n $ is  large  enough  to  obtain  reasonably  balanced  loads.  
 
 Virtual copies are also useful for dealing with heterogeneous servers that have different capacities.  The sensible approach is to make the number of virtual copies of a server proportional to the server capacity; for example, if one server is twice as big as another, it should have twice as many virtual copies.
 
