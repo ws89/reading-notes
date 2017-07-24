@@ -1,6 +1,15 @@
 
 
 - intended audience
+- target audience
+
+
+
+
+
+# References
+
+http://theory.stanford.edu/~tim/s16/l/l1.pdf
 
 
 
