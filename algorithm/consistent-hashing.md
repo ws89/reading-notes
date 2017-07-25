@@ -84,9 +84,15 @@ Virtual copies are also useful for dealing with heterogeneous servers that have 
 
 
 
+
+
+
+
 # References
 
 [CS168: The Modern Algorithmic Toolbox Lecture #1: Introduction and Consistent Hashing](http://theory.stanford.edu/~tim/s16/l/l1.pdf)
+
+[Partition Ring vs. Hash Ring](https://github.com/gholt/ring/blob/master/PARTITION_RING_VS_HASH_RING.md)
 
 ---
 
