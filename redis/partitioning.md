@@ -67,6 +67,30 @@ The main concept here is the following:
 
 
 
+## Presharding
+
+We learned that a problem with partitioning is that, unless we are using Redis as a cache, to add and remove nodes can be tricky, and it is much simpler to use a fixed keys-instances map.
+
+However the data storage needs may vary over the time. Today I can live with 10 Redis nodes (instances), but tomorrow I may need 50 nodes.
+
+Since Redis is extremely small footprint and lightweight (a spare instance uses 1 MB of memory), a simple approach to this problem is to start with a lot of instances since the start. Even if you start with just one server, you can decide to live in a distributed world since your first day, and run multiple Redis instances in your single server, using partitioning.
+
+And you can select this number of instances to be quite big since the start. For example, 32 or 64 instances could do the trick for most users, and will provide enough room for growth.
+
+In this way as your data storage needs increase and you need more Redis servers, what to do is to simply move instances from one server to another. Once you add the first additional server, you will need to move half of the Redis instances from the first server to the second, and so forth.
+
+Using Redis replication you will likely be able to do the move with minimal or no downtime for your users:
+
+- Start empty instances in your new server.
+- Move data configuring these new instances as slaves for your source instances.
+- Stop your clients.
+- Update the configuration of the moved instances with the new server IP address.
+- Send the `SLAVEOF NO ONE` command to the slaves in the new server.
+- Restart your clients with the new updated configuration.
+- Finally shut down the no longer used instances in the old server.
+
+
+
 
 
 
