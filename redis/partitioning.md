@@ -91,7 +91,33 @@ Using Redis replication you will likely be able to do the move with minimal or n
 
 
 
+# Implementations of Redis partitioning
 
+So far we covered Redis partitioning in theory, but what about practice? What system should you use?
+
+## Redis Cluster
+
+Redis Cluster is the preferred way to get automatic sharding and high availability.  It is generally available and production-ready as of [April 1st, 2015](https://groups.google.com/d/msg/redis-db/dO0bFyD_THQ/Uoo2GjIx6qgJ). You can get more information about Redis Cluster in the [Cluster tutorial](https://redis.io/topics/cluster-tutorial).
+
+Once Redis Cluster will be available, and if a Redis Cluster compliant client is available for your language, Redis Cluster will be the de facto standard for Redis partitioning.
+
+Redis Cluster is a mix between *query routing* and *client side partitioning*.
+
+## Twemproxy
+
+[Twemproxy is a proxy developed at Twitter](https://github.com/twitter/twemproxy) for the Memcached ASCII and the Redis protocol. It is single threaded, it is written in C, and is extremely fast. It is open source software released under the terms of the Apache 2.0 license.
+
+Twemproxy supports automatic partitioning among multiple Redis instances, with optional node ejection if a node is not available (this will change the keys-instances map, so you should use this feature only if you are using Redis as a cache).
+
+It is *not* a single point of failure since you can start multiple proxies and instruct your clients to connect to the first that accepts the connection.
+
+Basically Twemproxy is an intermediate layer between clients and Redis instances, that will reliably handle partitioning for us with minimal additional complexities.
+
+You can read more about Twemproxy [in this antirez blog post](http://antirez.com/news/44).
+
+## Clients supporting consistent hashing
+
+An alternative to Twemproxy is to use a client that implements client side partitioning via consistent hashing or other similar algorithms. There are multiple Redis clients with support for consistent hashing, notably [Redis-rb](https://github.com/redis/redis-rb) and [Predis](https://github.com/nrk/predis).
 
 
 
