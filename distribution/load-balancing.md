@@ -40,9 +40,21 @@ Even task distribution load balancing is suitable when the servers in the cluste
 
 DNS based load balancing is a simple scheme where you configure your DNS to return different IP addresses to different computers when they request an IP address for your domain name. This achieves an effect that is similar to the even task distribution scheme, except that most computers cache the IP address and thus keep coming back to the same IP address until a new DNS lookup is made.
 
-While DNS based load balancing is possible, it is not the best way of reliably distributing traffic across multiple computers. You are better off using dedicated load balancing software or hardware.
+While DNS based load balancing is possible, **it is not the best way of reliably distributing traffic across multiple computers**. You are better off using dedicated load balancing software or hardware.
 
 
+
+## Weighted Task Distribution Scheme
+
+ A weighted task distribution load balancing scheme distributes the incoming tasks onto the servers in the cluster using weights. That means that you can specify the weight (ratio) of tasks a server should receive relative to other servers. This is useful if the servers in the cluster do not all have the same capacity.
+
+ For instance, if one of three servers only has 2/3 capacity of the two others, you can use the weights `3, 3, 2`. This means that the first server should receive 3 tasks, the second server 3 tasks, and the last server only 2 tasks, for every 8 tasks received. That way the server with 2/3 capacity only receives 2/3 tasks compared to the other servers in the cluster. Here is a diagram illustrating this example:
+
+![Weighted distribution load balancing](http://tutorials.jenkov.com/images/software-architecture/load-balancing-3.png)
+
+
+
+As mentioned earlier, weighted task distribution load balancing is useful when the servers in the cluster **do not all have the same capacity**. However, weighted task distribution still does not take the work required to process the tasks into consideration.
 
 
 
