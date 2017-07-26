@@ -125,6 +125,8 @@ An alternative to Twemproxy is to use a client that implements client side parti
 
 [Partitioning: how to split data among multiple Redis instances.](https://redis.io/topics/partitioning)
 
+[Redis Presharding](http://oldblog.antirez.com/post/redis-presharding.html)
+
 ---
 
 created at 2017-07-26 00:23
