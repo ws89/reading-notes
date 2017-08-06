@@ -58,6 +58,22 @@ As mentioned earlier, weighted task distribution load balancing is useful when t
 
 
 
+## Sticky Session Scheme
+
+Imagine if the servers in the cluster keep some kind of session state, like the session object in a Java web application (or in PHP, or ASP). If a task (HTTP request) arrives at server 1, and that results in writing some value to session state, what happens if subsequent requests from the same user are sent to server 2 or server 3? Then that session value might be missing, because it is stored in the memory of server 1.  Here is a diagram illustrating the situation:
+
+![Server cluster which uses session values.](http://tutorials.jenkov.com/images/software-architecture/load-balancing-4.png)
+
+The solution to this problem is called Sticky Session Load Balancing. All tasks (e.g. HTTP requests) belonging to the same session (e.g the same user) are sent to the same server. That way any stored session values that might be needed by subsequent tasks (requests) are available.
+
+
+
+ With sticky session load balancing it isn't the tasks that are distributed out to the servers, but rather the task sessions. This will of course result in a somewhat more unpredictable distribution of work load, as some sessions will contain few tasks, and other sessions will contain many tasks.
+
+ Another solution is to avoid using session variables completely, or to store the session variables in a database or cache server, accessible to all servers in the cluster.
+
+
+
 
 
 
