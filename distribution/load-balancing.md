@@ -90,6 +90,22 @@ The solution to this problem is called Sticky Session Load Balancing. All tasks 
 
 
 
+## Autonomous Queue Scheme
+
+ The autonomous queue load balancing scheme, all incoming tasks are stored in a task queue. The servers in the server cluster connects to this queue and takes the number of tasks they can process. Here is a diagram illustrating this scheme:
+
+![Autonomous queue scheme.](http://tutorials.jenkov.com/images/software-architecture/load-balancing-6.png)
+
+ In this scheme there is no real load balancer. Each server *takes* the load it is able to handle. There is just the task queue and the server. If a server falls out of the cluster, its tasks are kept unprocessed on the task queue, and processed by other servers later. Thus each server functions autonomously of the other servers and of the task queue. No load balancer needs to know what servers are part of the cluster etc. The task queue does not need to know about the servers. Each server just needs to know about the task queue.
+
+ Autonomous queue load balancing also implicitly takes the work load and capacity of each sever into consideration. Servers only take tasks from the queue then they have capacity to process them.
+
+ Autonomous queue has a little disadvantage compared to even queue size distribution. A server that wants a task needs to first connect to the queue, then download the task, and then provide a response. This is 2 to 3 network roundtrips (depending on whether a response needs to be sent back).
+
+ The even queue size distribution scheme has one network roundtrip less. The load balancer sends a request to a server, and the server sends back a response (if needed). That is just 1 to 2 network roundtrips.
+
+
+
 
 
 # References
