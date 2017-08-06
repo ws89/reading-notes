@@ -74,7 +74,19 @@ The solution to this problem is called Sticky Session Load Balancing. All tasks 
 
 
 
+## Even Size Task Queue Distribution Scheme
 
+ The even size task queue distribution scheme is similar to the weighted task distribution scheme, but with a twist. Instead of blindly distributing the tasks onto the servers in the cluster, the load balancer keeps a task queue for each server. The task queues contain all requests that each server is currently processing, or which are waiting to be processed. Here is a diagram illustrating this principle:
+
+![Even tasks queued distribution scheme.](http://tutorials.jenkov.com/images/software-architecture/load-balancing-5.png)
+
+ When a server finishes a task, for instance has finished sending back an HTTP response to a client, the task is removed from the task queue for that server.
+
+ The even tasks queued distribution scheme works by making sure that each server queue has the same amount of tasks in progress at the same time. Servers with higher capacity will finish tasks faster than servers with low capacity. Thus the task queues of the higher capacity servers will empty faster and thus faster have space for new tasks.
+
+ As you can imagine, this load balancing scheme implicitly takes both the work required to process each task *and* the capacity of each server into consideration. New tasks are sent to the servers with fewest tasks queued up. Tasks are emptied from the queues when they are finished, which means that the time it took to process the task is automatically impacting the size of the queue. Since how fast a task is completed depends on the server capacity, server capacity is automatically taken into consideration too. If a server is temporarily overloaded, its task queue size will become larger than the task queues of the other servers in the cluster. The overloaded server will thus not have new tasks assigned to it until it has worked its queue down.
+
+ The load balancer will have to do a bit more accounting using this scheme. It has to keep track of task queues, and it has to keep track of when a task is completed, so it can be removed from the corresponding task queue.
 
 
 
