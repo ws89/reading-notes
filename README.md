@@ -49,6 +49,7 @@ Read → Think → Note → Review
    - [primitive-data-types](/java/primitive-data-types.md)
    - JVM
      - [JMM-concurrency](/java/JVM-JMM-concurrency.md)
+     - [JVM-architecture-overview](/java/JVM-java-virtual-machine.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
    - [lambda](/java/lambda.md)
