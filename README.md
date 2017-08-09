@@ -48,8 +48,8 @@ Read → Think → Note → Review
    - [double-equality-sign](/java/double-equality-sign.md)
    - [primitive-data-types](/java/primitive-data-types.md)
    - JVM
-     - [JMM-concurrency](/java/JVM-JMM-concurrency.md)
-     - [JVM-architecture-overview](/java/JVM-java-virtual-machine.md)
+     - [JMM-concurrency](/java/jvm/JVM-JMM-concurrency.md)
+     - [JVM-architecture-overview](/java/jvm/JVM-java-virtual-machine.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
    - [lambda](/java/lambda.md)
