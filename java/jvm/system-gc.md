@@ -40,6 +40,8 @@ The method [`System.gc()`](https://docs.oracle.com/javase/7/docs/api/java/lang/S
 
 [Runtime.html#gc()](https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html#gc())
 
+[When does System.gc() do anything](https://stackoverflow.com/questions/66540/when-does-system-gc-do-anything)
+
 ---
 
 created at 2017-08-09 22:35
