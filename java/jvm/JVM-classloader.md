@@ -49,6 +49,8 @@ This is the final phase of Class Loading, here all **static variables **will be 
 
 [The JVM Architecture Explained](https://dzone.com/articles/jvm-architecture-explained)
 
+[Use of Class.forName in java](https://www.javainterviewpoint.com/use-of-class-forname-in-java/)
+
 [classloader使用与原理分析](https://liuzhengyang.github.io/2016/09/28/classloader/)
 
 ---
