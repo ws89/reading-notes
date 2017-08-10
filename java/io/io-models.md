@@ -173,6 +173,26 @@ That is, we tell the kernel what descriptors we are interested in (for reading, 
 
 
 
+## poll()
+
+poll() is designed to address some of those issues.
+
+```c
+poll(struct pollfd *fds, int nfds, int timeout)
+
+struct pollfd {
+    int fd;
+    short events;
+    short revents;
+}
+```
+
+poll() does not rely on bitmap, but array of file descriptors (thus the issue #1 solved). By having separate fields for interest (events) and result (revents), the issue #2 is also solved if the user application properly maintains and re-uses the array). The issue #3 could have been fixed if poll separated the array, not the field. The last issue is inherent and unavoidable, as both select() and poll() are stateless; the kernel does not internally maintain the interest sets.
+
+
+
+
+
 # References
 
 [Scalable Event Multiplexing: epoll vs. kqueue](http://people.eecs.berkeley.edu/~sangjin/2012/12/21/epoll-vs-kqueue.html)
