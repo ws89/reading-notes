@@ -127,6 +127,52 @@ Using these definitions, the first four I/O models (blocking, nonblocking, I/O m
 
 
 
+---
+
+
+
+# select()
+
+select() and poll() are very similar in the way they work. Let me quickly review how select() looks like first.
+
+```c
+select(int nfds, fd_set *r, fd_set *w, fd_set *e, struct timeval *timeout)
+```
+
+```c
+#include <sys/select.h>
+
+#include <sys/time.h>
+
+int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);
+
+													Returns: positive count of ready descriptors, 0 on timeout, –1 on error
+```
+
+With select(), your application needs to provide three *interest sets*, r, w, and e. Each set is represented as a bitmap of your file descriptor. For example, if you are interested in reading from file descriptor 6, the sixth bit of r is set to 1. The call is blocked, until one or more file descriptors in the interest sets become ready, so you can perform operations on those file descriptors without blocking. Upon return, the kernel overwrites the bitmaps to specify which file descriptors are ready.
+
+In terms of scalability, we can find four issues.
+
+1. Those bitmaps are fixed in size (FD_SETSIZE, usually 1,024). There are some ways to work around this limitation, though.
+2. Since the bitmaps are overwritten by the kernel, user applications should refill the interest sets for every call.
+3. The user application and the kernel should scan the entire bitmaps for every call, to figure out what file descriptors belong to the interest sets and the result sets. This is especially inefficient for the result sets, since they are likely to be very sparse (i.e., only a few of file descriptors are ready at a given time).
+4. The kernel should iterate over the entire interest sets to find out which file descriptors are ready, again for every call. If none of them is ready, the kernel iterates again to register an internal event handler for each socket.
+
+---
+
+This function allows the process to instruct the kernel to wait for any one of multiple events to occur and to wake up the process only when one or more of these events occurs or when a specified amount of time has passed.
+
+As an example, we can call `select` andtell the kernel to return only when:
+
+- Any of the descriptors in the set {1, 4, 5} areready for reading
+- Any of the descriptors in the set {2, 7} areready for writing
+- Any of the descriptors in the set {1, 4} have anexception condition pending
+- 10.2 seconds have elapsed
+
+That is, we tell the kernel what descriptors we are interested in (for reading, writing, or an exception condition) and how long to wait. The descriptors in which we are interested are not restricted to sockets; any descriptor can be tested using `select`.
+
+
+
 # References
 
 [Scalable Event Multiplexing: epoll vs. kqueue](http://people.eecs.berkeley.edu/~sangjin/2012/12/21/epoll-vs-kqueue.html)
@@ -135,6 +181,10 @@ Using these definitions, the first four I/O models (blocking, nonblocking, I/O m
 
 [6.2 I/O Models](http://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1.3/ch06lev1sec2.html)
 
+[6.3 `select` Function](http://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1.3/ch06lev1sec3.html)
+
 ---
 
 created at 2017-07-11 22:50
+
+updated at 2017-08-10 23:40
