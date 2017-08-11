@@ -79,8 +79,9 @@ Read → Think → Note → Review
 - os
    - [kernel](/os/kernel.md)
    - IO
-     - [io-models](/java/io/io-models.md)
-     - [io-hardware-software](/java/io/io-hardware-software.md)
+     - [io-models](/os/io-models.md)
+     - [io-hardware-software](/os/io-hardware-software.md)
+     - [select/poll-and-epoll/kqueue](/os/select-poll-and-epoll-kqueue.md)
 - redis
    - [redis-key-descprition](/redis/redis-keys.md)
    - [data-types](/redis/data-types.md)
