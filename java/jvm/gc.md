@@ -1,3 +1,7 @@
+# JRE (Java Runtime Environment)
+
+The JRE consists of the Java Virtual Machine (JVM), Java platform core classes, and supporting Java platform libraries.
+
 
 
 
@@ -11,6 +15,8 @@
 
 
 # References
+
+[Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
 
 [What is the difference between PermGen and Metaspace?](https://stackoverflow.com/questions/27131165/what-is-the-difference-between-permgen-and-metaspace)
 
