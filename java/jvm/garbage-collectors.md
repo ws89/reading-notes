@@ -93,7 +93,19 @@ Here is a sample command line for starting the `Java2Demo`:
 
 
 
+### The G1 Garbage Collector
 
+The Garbage First or G1 garbage collector is available in Java 7 and is designed to be **the long term replacement for the CMS collector**. The G1 collector is a **parallel, concurrent, and incrementally compacting  low-pause** garbage collector that has quite a different layout from the other garbage collectors described previously.
+
+
+
+#### Command Line Switches
+
+To enable the G1 Collector use:
+`-XX:+UseG1GC`
+
+Here is a sample command line for starting the `Java2Demo`:
+`java -Xmx12m -Xms3m -XX:+UseG1GC -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar`
 
 
 
