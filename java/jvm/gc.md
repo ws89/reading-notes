@@ -100,9 +100,17 @@ To further improve performance, in addition to deleting unreferenced objects, yo
 
 
 
+# Generational GC
+
+As stated earlier, having to mark and compact all the objects in a JVM is inefficient. As more and more objects are allocated, the list of objects grows and grows leading to longer and longer garbage collection time. However, empirical analysis of applications has shown that **most objects are short lived**.
 
 
 
+Here is an example of such data. The Y axis shows the number of bytes allocated and the X access shows the number of bytes allocated over time.
+
+![http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/ObjectLifetime.gif](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/ObjectLifetime.gif)
+
+As you can see, fewer and fewer objects remain allocated over time. In fact most objects have a very short life as shown by the higher values on the left side of the graph.
 
 
 
