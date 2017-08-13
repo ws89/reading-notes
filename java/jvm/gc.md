@@ -78,13 +78,17 @@ The first step in the process is called marking. This is where the garbage colle
 
 
 
+## Normal Deletion
+
+Normal deletion removes unreferenced objects leaving referenced objects and pointers to free space.
+
+![http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide1b.png](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide1b.png)
 
 
 
 
 
-
-
+The memory allocator holds references to blocks of free space where new object can be allocated.
 
 
 
