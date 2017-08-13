@@ -64,13 +64,17 @@ High pause times are acceptable for applications that focus on throughput. Since
 
 
 
+# GC (Garbage Collection)
+
+Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects. An in use object, or a referenced object, means that some part of your program still maintains a pointer to that object. An unused object, or unreferenced object, is no longer referenced by any part of your program. So the memory used by an unreferenced object can be reclaimed.
 
 
 
+## Marking
 
+The first step in the process is called marking. This is where the garbage collector identifies which pieces of memory are in use and which are not.
 
-
-
+![http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide3.png](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide3.png)
 
 
 
