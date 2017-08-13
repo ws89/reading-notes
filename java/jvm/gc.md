@@ -187,7 +187,17 @@ are cleared. Notice we now have differently aged object in the survivor space.
 
 
 
+# Garbage Collectors
 
+### Common Heap Related Switches
+
+| **Switch**      | **Description**                          |
+| --------------- | ---------------------------------------- |
+| `-Xms`          | Sets the initial heap size for when the JVM starts. |
+| `-Xmx`          | Sets the maximum heap size.              |
+| `-Xmn`          | Sets the size of the Young Generation.   |
+| -XX:PermSize    | Sets the starting size of the Permanent Generation. |
+| -XX:MaxPermSize | Sets the maximum size of the Permanent Generation |
 
 
 
