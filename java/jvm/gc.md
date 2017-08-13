@@ -92,11 +92,11 @@ The memory allocator holds references to blocks of free space where new object c
 
 
 
+### Deletion with Compacting
 
+To further improve performance, in addition to deleting unreferenced objects, you can also compact the remaining referenced objects. By moving referenced object together, this makes new memory allocation much easier and faster.
 
-
-
-
+![http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide4.png](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide4.png)
 
 
 
