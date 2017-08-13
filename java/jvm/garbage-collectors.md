@@ -67,6 +67,30 @@ Here is a sample command line for starting the `Java2Demo`:
 
 
 
+## The Concurrent Mark Sweep (CMS) Collector
+
+The Concurrent Mark Sweep (CMS) collector (also referred to as the concurrent low pause collector) collects the ***tenured generation***. It attempts to **minimize the pauses** due to garbage collection by doing most of the garbage collection work **concurrently** with the application threads. Normally the concurrent low pause collector does not copy or compact the live objects. A garbage collection is done without moving the live objects. If **fragmentation** becomes a problem, allocate a larger heap.
+
+**Note:** CMS collector on young generation uses the same algorithm as that of the parallel collector.
+
+
+
+#### Usage Cases
+
+The CMS collector should be used for applications that require low pause times and can share resources with the garbage collector. Examples include desktop UI application that respond to events, **a webserver responding to a request or a database responding to queries**.
+
+
+
+#### Command Line Switches
+
+To enable the CMS Collector use:
+`-XX:+UseConcMarkSweepGC`
+and to set the number of threads use:
+`-XX:ParallelCMSThreads=<n>`
+
+Here is a sample command line for starting the `Java2Demo`:
+`java -Xmx12m -Xms3m -Xmn1m -XX:PermSize=20m -XX:MaxPermSize=20m -XX:+UseConcMarkSweepGC -XX:ParallelCMSThreads=2 -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar`
+
 
 
 
