@@ -34,17 +34,36 @@ Here is a sample command line for starting the `Java2Demo`:
 
 
 
+## The Parallel GC
+
+The parallel garbage collector uses multiple threads to perform the ***young generation*** garbage collection. By default **on a host with N CPUs, the parallel garbage collector uses N garbage collector threads** in the collection. The number of garbage collector threads can be controlled with command-line options:
+`-XX:ParallelGCThreads=<desired number>`
+
+**On a host with a single CPU the default garbage collector is used even if the parallel garbage collector has been requested**. On a host with two CPUs the parallel garbage collector generally performs as well as the default garbage collector and **a reduction in the young generation garbage collector pause times can be expected on hosts with more than two CPUs**. The Parallel GC comes in two flavors.
 
 
 
+#### Usage Cases
+
+The Parallel collector is also called a throughput collector. Since it can use multiple CPUs to speed up application throughput. This collector should be used when a lot of work need to be done and long pauses are acceptable. For example, batch processing like printing reports or bills or performing a large number of database queries.
+
+#### -XX:+UseParallelGC
+
+With this command line option you get a **multi-thread young generation collector with a single-threaded old generation** collector.  The option also does single-threaded compaction of old generation.
+
+Here is a sample command line for starting the `Java2Demo`:
+` java -Xmx12m -Xms3m -Xmn1m -XX:PermSize=20m -XX:MaxPermSize=20m -XX:+UseParallelGC -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar `
 
 
 
+#### -XX:+UseParallelOldGC
 
+With the `-XX:+UseParallelOldGC` option, the GC is **both a multithreaded young generation collector and multithreaded old generation collector**. It is also a multithreaded compacting collector. HotSpot does compaction only in the old generation. Young generation in HotSpot is considered a copy collector; therefore, there is no need for compaction.
 
+Compacting describes the act of moving objects in a way that there are no holes between objects. After a garbage collection sweep, there may be holes left between live objects. Compacting moves objects so that there are no remaining holes. It is possible that a garbage collector be a non-compacting collector. Therefore, the difference between **a parallel collector** and **a parallel compacting collector** could be the latter compacts the space after a garbage collection sweep. The former would not.
 
-
-
+Here is a sample command line for starting the `Java2Demo`:
+`java -Xmx12m -Xms3m -Xmn1m -XX:PermSize=20m -XX:MaxPermSize=20m -XX:+UseParallelOldGC -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar`
 
 
 
