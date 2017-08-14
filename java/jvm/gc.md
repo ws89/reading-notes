@@ -142,7 +142,13 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 
 1.First, any new objects are allocated to the eden space. Both survivor spaces start out empty.
 
-![images/gcslides/Slide13.png](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide13.png)
+
+
+![images/gcslides/Slide13.png](/attachments/java/Slide13.png)
+
+http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide13.png
+
+
 
 2.When the eden space fills up, a minor garbage collection is **triggered**.
 
