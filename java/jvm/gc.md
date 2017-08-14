@@ -144,7 +144,7 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 
 
 
-![images/gcslides/Slide13.png](/attachments/java/Slide13.png)
+![images/gcslides/Slide13.png](/attachments/java/jvm/Slide13.png)
 
 http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide13.png
 
