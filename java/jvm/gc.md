@@ -189,16 +189,6 @@ are cleared. Notice we now have differently aged object in the survivor space.
 
 
 
-
-
-# PermGen VS. Metaspace
-
->  **Metaspace by default auto increases** its size (up to what the underlying OS provides), while PermGen always has a fixed maximum size. You can set a fixed maximum for Metaspace with JVM parameters, but you cannot make PermGen auto increase.
-
-> In short, Metaspace size **auto increases in native memory** as required to load class metadata if not restricted with `-XX:MaxMetaspaceSize`
-
-
-
 # References
 
 [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
