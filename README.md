@@ -52,6 +52,10 @@ Read → Think → Note → Review
    - JVM
      - [JMM-concurrency](/java/jvm/JVM-JMM-concurrency.md)
      - [JVM-architecture-overview](/java/jvm/JVM-java-virtual-machine.md)
+     - [GC](/java/jvm/gc.md)
+     - [garbage-collectors](/java/jvm/garbage-collectors.md)
+     - [PermGen-VS-Metaspace](/java/jvm/permgen-metaspace.md)
+     - [System.gc()](/java/jvm/system-gc.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
    - [lambda](/java/lambda.md)
