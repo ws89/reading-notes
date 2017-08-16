@@ -10,15 +10,17 @@
 
 
 
+This is how Heap Structure look like in Java 6
+
+![img](/attachments/java/jvm/java_memory_permGen.png)
+
+
+
 # Permanent Generation
 
 **The Permanent generation** contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in  use by the application. In addition, Java SE library classes and methods may be stored here.
 
-
-
 Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a **full garbage collection**.
-
-
 
 
 
@@ -85,6 +87,8 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 [Java 8: From PermGen to Metaspace](https://dzone.com/articles/java-8-permgen-metaspace)
 
 [What is the difference between PermGen and Metaspace?](https://stackoverflow.com/questions/27131165/what-is-the-difference-between-permgen-and-metaspace)
+
+[Metaspace in Java 8](http://java-latte.blogspot.in/2014/03/metaspace-in-java-8.html)
 
 ---
 
