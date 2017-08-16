@@ -1,5 +1,7 @@
 # Generations
 
+![http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_1_MemoryModel.png](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_1_MemoryModel.png)
+
 - **Young Generation**: is where all new objects are allocated and aged.
 - **Eden Space (heap)**: The pool from which memory is initially allocated for most objects.
 - **Survivor Space (heap)**: The pool containing objects that have survived the garbage collection of the Eden space.
@@ -135,6 +137,10 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 [What is the difference between PermGen and Metaspace?](https://stackoverflow.com/questions/27131165/what-is-the-difference-between-permgen-and-metaspace)
 
 [Metaspace in Java 8](http://java-latte.blogspot.in/2014/03/metaspace-in-java-8.html)
+
+[Method Area and PermGen](https://stackoverflow.com/questions/9095748/method-area-and-permgen)
+
+[2.5.4. Method Area](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5.4)
 
 ---
 
