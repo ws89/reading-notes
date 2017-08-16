@@ -6,7 +6,7 @@
 - **Tenured Generation (heap)**: The pool containing objects that have existed for some time in the survivor space.
 - **Permanent Generation (non-heap)**: The pool containing all the reflective data of the virtual machine itself, such as class and method objects. With Java VMs that use class data sharing, this generation is divided into read-only and read-write areas.
 
-**Note** : the **permanent generation** is not part of the heap. It's a separate space for class definitions and related data, as well as where interned strings live.
+**Note** : the **permanent generation** is ***not part of the heap***. It's a separate space for class definitions and related data, as well as where interned strings live.
 
 
 
