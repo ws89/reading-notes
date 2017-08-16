@@ -268,7 +268,21 @@ It's basically two-step process:
 
 After the sweep phase, live heap objects are distributed throughout the heap space. This can lead to poor locality. If live objects span many memory pages, paging overhead may be increased. Cache locality may be degraded too.
 
-We can add a compaction phase to mark-sweep garbage collection. After live objects are identiﬁed, they are placed together at one end of the heap. This involves another tracing phase in which global, local and internal heap pointers are found and adjusted to reﬂect the object’s new location.
+**We can add a compaction phase to mark-sweep garbage collection**. After live objects are identiﬁed, they are placed together at one end of the heap. This involves another tracing phase in which global, local and internal heap pointers are found and adjusted to reﬂect the object’s new location.
+
+
+
+### Copying Collectors
+
+An entire family of garbage collection techniques, called copying collectors are designed to integrate copying with recognition of live heap objects. Copying collectors are very popular and are widely used. Consider a simple copying collector that uses semi-spaces. We start with the heap divided into two halve - the from and to spaces.
+
+
+
+Initially, we allocate heap requests from the from space, using a simple “end of heap” pointer. When the from space is exhausted, we stop and do garbage collection. Actually, though we don’t collect garbage. We collect live heap objects—garbage is never touched.
+
+We trace through global and local pointers, ﬁnding live objects. As each object is found, it is moved from its current position in the from space to the next available position in the to space. The pointer is updated to reﬂect the object’s new location.
+
+
 
 
 
