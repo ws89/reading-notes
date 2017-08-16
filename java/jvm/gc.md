@@ -274,13 +274,21 @@ After the sweep phase, live heap objects are distributed throughout the heap spa
 
 ### Copying Collectors
 
-An entire family of garbage collection techniques, called copying collectors are designed to integrate copying with recognition of live heap objects. Copying collectors are very popular and are widely used. Consider a simple copying collector that uses semi-spaces. We start with the heap divided into two halve - the from and to spaces.
-
-
+An entire family of garbage collection techniques, called copying collectors are designed to integrate copying with recognition of live heap objects. Copying collectors are very popular and are widely used. Consider a simple copying collector that uses **semi-spaces**. We start with the heap divided into **two halve - the from and to spaces**.
 
 Initially, we allocate heap requests from the from space, using a simple “end of heap” pointer. When the from space is exhausted, we stop and do garbage collection. Actually, though we don’t collect garbage. We collect live heap objects—garbage is never touched.
 
 We trace through global and local pointers, ﬁnding live objects. As each object is found, it is moved from its current position in the from space to the next available position in the to space. The pointer is updated to reﬂect the object’s new location.
+
+
+
+### Generational Techniques
+
+The great strength of copying collectors is that they do no work for objects that are born and die between collections. However, **not all heaps objects are so short-lived**. In fact, some heap objects are very long-lived.
+
+Generational garbage collection techniques were developed to better handle objects with varying lifetimes. The heap is divided into two or more generations, each with its own to and from space. New objects are allocated in the youngest generation, which is collected most frequently. If an object survives across one or more collections of the youngest generation, it is “promoted” to the next older generation, which is collected less often. Objects that survive one or more collections of this generation are then moved to the next older generation. This continues until very long-lived objects reach the oldest generation, which is collected very infrequently.
+
+The advantage of this approach is that long-lived objects are “**ﬁltered out**,” greatly reducing the cost of **repeatedly processing them**. Of course, some long-lived objects will die and these will be caught when their generation is eventually collected.
 
 
 
