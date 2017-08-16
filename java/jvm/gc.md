@@ -201,11 +201,59 @@ are cleared. Notice we now have differently aged object in the survivor space.
 
 
 
+# GC Work
+
+Many people think garbage collection collects and discards dead objects. In reality, Java garbage collection is doing the opposite! **Live objects are tracked and everything else designated garbage**.
+
+
+
+Let's start with the heap, which is the area of memory used for **dynamic allocation**. In most configurations the operating system **allocates the heap in advance** to be managed by the JVM while the program is running. This has a couple of important ramifications:
+
+- Object creation is faster because global synchronization with the operating system is not needed for every single object. An allocation simply claims some portion of a memory array and moves the offset pointer forward . The next allocation starts at this offset and claims the next portion of the array.
+- When an object is no longer used, the garbage collector reclaims the underlying memory and reuses it for future object allocation. This means there is no explicit deletion and no memory is given back to the operating system.
+
+
+
+All objects are allocated on the heap area managed by the JVM. Every item that the developer uses is treated this way, including class objects, static variables, and even the code itself. As long as an object is being referenced, the JVM considers it alive. Once an object is no longer referenced and therefore is not reachable by the application code, the garbage collector removes it and reclaims the unused memory. 
+
+
+
+## GC Roots
+
+Every object tree must have one or more root objects. As long as the application can reach those roots, the whole tree is reachable. But when are those root objects considered reachable? Special objects called garbage-collection roots are always **reachable** and so is any object that has a garbage-collection root at its own root.
+
+
+
+There are four kinds of GC roots in Java:
+
+- **Local variables** are kept alive by the stack of a thread. This is not a real object virtual reference and thus is not visible. For all intents and purposes, local variables are GC roots.
+- **Active Java threads** are always considered live objects and are therefore GC roots. This is especially important for thread local variables.
+- **Static variables** are referenced by their classes. This fact makes them de facto GC roots. Classes themselves can be garbage-collected, which would remove all referenced static variables. 
+
+
+- **JNI References** are Java objects that the native code has created as part of a JNI call. Objects thus created are treated specially because the JVM does not know if it is being referenced by the native code or not. Such objects represent a very special form of GC root.
+
+
+
+Therefore, a simple Java application has the following GC roots:
+
+- Local variables in the main method
+- The main thread
+- Static variables of the main class
+
+
+
+
+
+
+
 
 
 # References
 
 [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
+
+[Garbage Collection in Java](http://java-latte.blogspot.in/2013/08/garbage-collection-in-java.html)
 
 [What is the difference between PermGen and Metaspace?](https://stackoverflow.com/questions/27131165/what-is-the-difference-between-permgen-and-metaspace)
 
