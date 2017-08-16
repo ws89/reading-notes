@@ -243,9 +243,32 @@ Therefore, a simple Java application has the following GC roots:
 
 
 
+## GC Techniques
+
+### Reference Counting
+
+This is one of the oldest and simplest garbage collection techniques.
+
+A reference count ﬁeld is added to each heap object. It counts how many references to the heap object exist. When an object’s reference count reaches zero, it is garbage and may collected.
 
 
 
+### Mark-Sweep Collection
+
+Many collectors, including mark & sweep, do nothing until heap space is nearly exhausted.Then it executes a marking phase that identiﬁes all live heap objects.After the marking phase, any object not marked is garbage that may be freed. We then sweep through the heap, collecting all unmarked objects. During the sweep phase we also clear all marks from heap objects found to be still in use.
+
+It's basically two-step process:
+
+1. The algorithm traverses all object references, starting with the **GC roots**, and marks every object found as alive.
+2. All of the heap memory that is not occupied by marked objects is reclaimed. It is simply marked as free, essentially swept free of unused objects.
+
+
+
+### Compaction
+
+After the sweep phase, live heap objects are distributed throughout the heap space. This can lead to poor locality. If live objects span many memory pages, paging overhead may be increased. Cache locality may be degraded too.
+
+We can add a compaction phase to mark-sweep garbage collection. After live objects are identiﬁed, they are placed together at one end of the heap. This involves another tracing phase in which global, local and internal heap pointers are found and adjusted to reﬂect the object’s new location.
 
 
 
