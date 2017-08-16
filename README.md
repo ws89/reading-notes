@@ -54,7 +54,7 @@ Read → Think → Note → Review
      - [JVM-architecture-overview](/java/jvm/JVM-java-virtual-machine.md)
      - [GC](/java/jvm/gc.md)
      - [garbage-collectors](/java/jvm/garbage-collectors.md)
-     - [PermGen-VS-Metaspace](/java/jvm/permgen-metaspace.md)
+     - [JVM-generations](/java/jvm/JVM-generations.md)
      - [System.gc()](/java/jvm/system-gc.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)

@@ -70,6 +70,14 @@ Automatic garbage collection is the process of looking at heap memory, identifyi
 
 
 
+**Follows:**
+
+1. Marking
+2. Normal Deletion
+3. Deletion with compacting
+
+
+
 ## Marking
 
 The first step in the process is called marking. This is where the garbage collector identifies which pieces of memory are in use and which are not.
@@ -92,7 +100,7 @@ The memory allocator holds references to blocks of free space where new object c
 
 
 
-### Deletion with Compacting
+## Deletion with Compacting
 
 To further improve performance, in addition to deleting unreferenced objects, you can also compact the remaining referenced objects. By moving referenced object together, this makes new memory allocation much easier and faster.
 
@@ -116,7 +124,7 @@ As you can see, fewer and fewer objects remain allocated over time. In fact most
 
 ## JVM Generations
 
-The heap parts are: Young Generation, Old or Tenured Generation, and Permanent Generation.
+The heap parts are: **Young Generation, Old or Tenured Generation, and Permanent Generation**.
 
 ![http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide5.png](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide5.png)
 
