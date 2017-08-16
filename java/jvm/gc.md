@@ -292,13 +292,41 @@ The advantage of this approach is that long-lived objects are “**ﬁltered out
 
 
 
+# Eligible for GC
+
+1. Set all available object **references to null** once its purpose is over
+
+2. Make the reference variable to refer to another object :
+   String str1 = "Java.latte.blogspot.in";
+   String str2 = "google.com";
+   //String object referred by str1 is not eligible for GC yet
+   str1 = str2;
+   //str1 variable referes to the String object "google.com" and the object "Java.latte.blogspot.in" is not referred by any variable and hence is eligible for GC 
+
+3. Creating Islands of Isolation
+
+   If you have two instance reference variables which are referring to the instances of the same class, and these two reference variables refer to each other and the objects referred by these reference variables do not have any other valid reference then these two objects are said to form an Island of Isolation and are eligible for Garbage Collection.
+
+   ```java
+   Test gc1 = new Test ();
+   Test gc2 = new Test ();
+   gc1.g = gc2;
+   gc2.g = gc1;
+   gc1 = null;
+   gc2 = null;
+   ```
+
+   Here gc1 and gc2 refer to each other and have no other valid, form Island of Isolation and eligible for Garbage collection
+
+
+
 
 
 # References
 
 [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
 
-[Garbage Collection in Java](http://java-latte.blogspot.in/2013/08/garbage-collection-in-java.html)
+[**Garbage Collection in Java**](http://java-latte.blogspot.in/2013/08/garbage-collection-in-java.html)
 
 [What is the difference between PermGen and Metaspace?](https://stackoverflow.com/questions/27131165/what-is-the-difference-between-permgen-and-metaspace)
 
@@ -309,3 +337,5 @@ The advantage of this approach is that long-lived objects are “**ﬁltered out
 ---
 
 created at 2017-08-11 23:37
+
+updated at 2017-08-16 17:59
