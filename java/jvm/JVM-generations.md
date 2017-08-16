@@ -10,6 +10,18 @@
 
 
 
+# Permanent Generation
+
+**The Permanent generation** contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in  use by the application. In addition, Java SE library classes and methods may be stored here.
+
+
+
+Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a **full garbage collection**.
+
+
+
+
+
 # Metaspace
 
 ## Metaspace Details
