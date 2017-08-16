@@ -18,13 +18,59 @@ This is how Heap Structure look like in Java 6
 
 # Permanent Generation
 
-**The Permanent generation** contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in  use by the application. In addition, Java SE library classes and methods may be stored here.
+The pool containing all the reflective data of the virtual machine itself, such as class and method objects. With Java VMs that use class data sharing, this generation is divided into read-only and read-write areas.
+
+The Permanent generation contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in  use by the application. In addition, Java SE library classes and methods may be stored here.
 
 Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a **full garbage collection**.
+
+- Region of Java Heap for JVM Class Metadata.
+- Hotspot’s internal representation of Java Classes.
+- Class hierarchy information, fields, names
+- Method compilation information and bytecodes
+- Variables
+- Constant pool and symbolic resolution
+
+
+
+## PermGen Size
+
+- Limited to MaxPermSize – default ~64M - 85M
+
+- Contiguous with Java Heap : Identifying young references from old gen and permgen would  be more expensive and complicated with a non-contiguous heap – card table(A kind of remembered set that records where oops have changed in a generation).
+
+- Once exhausted throws OutOfMemoryError "PermGen space".
+
+- - Application could clear references to cause class unloading.
+  - Restart with larger MaxPermSize.
+
+- Size needed depends on number of classes, size of methods, size of constant pools.
+
+
+
+## Why was PermGen Eliminated?
+
+- Fixed size at startup – difficult to tune.
+
+- - -XX:MaxPermSize=?
+
+- Internal Hotspot types were Java objects : Could move with full GC, opaque, not strongly typed and hard to debug, needed meta-metadata.
+
+- Simplify full collections : Special iterators for metadata for each collector
+
+- Want to deallocate class data concurrently and not during GC pause
+
+- Enable future improvements that were limited by PermGen.
+
+
 
 
 
 # Metaspace
+
+![](/attachments/java/jvm/jvm_metapsace.png)
+
+
 
 ## Metaspace Details
 
