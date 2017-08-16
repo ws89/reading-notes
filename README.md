@@ -55,6 +55,7 @@ Read → Think → Note → Review
      - [GC](/java/jvm/gc.md)
      - [garbage-collectors](/java/jvm/garbage-collectors.md)
      - [JVM-generations](/java/jvm/JVM-generations.md)
+     - [tuning-GC](/java/jvm/tuning-garbage-collection.md)
      - [System.gc()](/java/jvm/system-gc.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
