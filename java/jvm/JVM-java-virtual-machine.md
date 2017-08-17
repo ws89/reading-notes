@@ -16,6 +16,48 @@
 
 
 
+## JMM
+
+
+
+![http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_1_MemoryModel.png](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_1_MemoryModel.png)
+
+
+
+![img](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_2_MemoryModel.png)
+
+
+
+
+
+![http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_6_MemoryModel.png](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_6_MemoryModel.png)
+
+
+
+
+
+
+
+
+
+### Example
+
+![img](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_3_HelloWorld.png)
+
+
+
+
+
+![img](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_4_MemoryModel.png)
+
+
+
+
+
+
+
+
+
 
 
 # References
@@ -27,6 +69,8 @@
 [The JVM Architecture Explained](https://dzone.com/articles/jvm-architecture-explained)
 
 [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
+
+[Runtime Data Areas – Java’s Memory Model](http://www.pointsoftware.ch/en/under-the-hood-runtime-data-areas-javas-memory-model/)
 
 ---
 
