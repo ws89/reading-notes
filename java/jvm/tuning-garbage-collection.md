@@ -101,11 +101,40 @@ Eden space= 208
 
 
 
+
+
+# OutOfMemoryErrors 
+
+- Exception in thread “main”: java.lang.OutOfMemoryError: **Java heap space**
+
+  Reason: an object could not be allocated into the heap space.
+
+- Exception in thread “main”: java.lang.OutOfMemoryError: **PermGen space**
+
+  Reason: classes and methods could not be loaded into the PermGen space. 
+  This occurs when an application requires a lot of classes e.g. in various 3rd party libraries.
+
+- Exception in thread “main”: java.lang.OutOfMemoryError: **Requested array size exceeds VM limit**
+
+  Reason: this occurs when an arrays is created larger than the heap size.
+
+- Exception in thread “main”: java.lang.OutOfMemoryError: **request bytes for . Out of swap space?**
+
+  Reason: this occurs when an allocation from the native heap failed and might be close to its limit. The indicates the source of the module where this error occurs.
+
+- Exception in thread “main”: java.lang.OutOfMemoryError: **(Native method)**
+
+  Reason: this error indicates that the problem originates from a native call rather than in the JVM.
+
+
+
+
+
 # References
 
 [Garbage Collection in Java](http://java-latte.blogspot.in/2013/08/garbage-collection-in-java.html)
 
-
+[Runtime Data Areas – Java’s Memory Model](http://www.pointsoftware.ch/en/under-the-hood-runtime-data-areas-javas-memory-model/)
 
 ---
 
