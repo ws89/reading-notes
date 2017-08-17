@@ -12,6 +12,10 @@
 
 
 
+![http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_2_MemoryModel.png](http://www.pointsoftware.ch/wp-content/uploads/2012/10/JUtH_20121024_RuntimeDataAreas_2_MemoryModel.png)
+
+
+
 This is how Heap Structure look like in Java 6
 
 ![img](/attachments/java/jvm/java_memory_permGen.png)
@@ -141,6 +145,8 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 [Method Area and PermGen](https://stackoverflow.com/questions/9095748/method-area-and-permgen)
 
 [2.5.4. Method Area](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5.4)
+
+[Runtime Data Areas – Java’s Memory Model](http://www.pointsoftware.ch/en/under-the-hood-runtime-data-areas-javas-memory-model/)
 
 ---
 
