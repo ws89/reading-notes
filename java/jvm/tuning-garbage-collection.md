@@ -156,7 +156,7 @@ For performance reasons we may also specify the initial size of the young genera
 
 
 
-**-XX:NewRatio**
+## -XX:NewRatio
 
 It is also possible to specify the young generation size in relation to the size of the old generation. The potential advantage of this approach is that the young generation will grow and shrink automatically when the JVM dynamically adjusts the total heap size at run time. The flag `-XX:NewRatio` allows us to specify the factor by which the old generation should be larger than the young generation. For example, with `-XX:NewRatio=3` the old generation will be three times as large as the young generation. That is, the old generation will occupy 3/4 and the young generation will occupy 1/4 of the heap.
 
@@ -172,7 +172,13 @@ There is no general rule if absolute or relative young generation sizing is pref
 
 
 
+## -XX:SurvivorRatio
 
+The flag `-XX:SurvivorRatio` is similar to `-XX:NewRatio` but applies to the areas inside the young generation. The value of `-XX:SurvivorRatio` specifies how large “Eden” should be sized relative to one of the two survivor spaces. For example, with `-XX:SurvivorRatio=10` we dimension “Eden” ten times as large as “To” (and at the same time ten times as large as “From”). As a result, “Eden” occupies 10/12 of the young generation while “To” and “From” each occupy 1/12. Note that the two survivor spaces are always equal in size.
+
+What effect does survivor space sizing have? Suppose that the survivor spaces are very small compared to “Eden”. Then we have lots of space in “Eden” for newly allocated objects, which is desirable. If all these objects can be collected during the next GC, “Eden” is empty again and everything is fine. However, if some of these young objects are still being referenced, we have only little space in the survivor spaces to accommodate them. As a consequence, most of these objects will be moved to the old generation right after their first GC, which is not desirable. Now let us consider the opposite situation: Suppose that the survivor spaces are relatively large in size. Then they have lots of space to fulfill their main purpose, to accommodate objects that survive one or more GCs but still die young. However, the smaller “Eden” space will be exhausted more quickly, which increases the number of young generation GCs performed. This is undesirable.
+
+In summary, we want to minimize the number of short-lived objects that are prematurely moved into the old generation, but we also want to minimize the number and duration of young generation GCs. Once again we need to find a compromise, which in turn depends on the characteristics of the application at hand. A good starting point for finding an adequate compromise is to learn about the age distribution of the objects in the particular application.
 
 
 
