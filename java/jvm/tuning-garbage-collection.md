@@ -224,7 +224,9 @@ While there are different approaches to use these flags to tune young generation
 
 
 
+## -XX:+NeverTenure and -XX:+AlwaysTenure
 
+ Finally, I would like to quickly mention two rather exotic flags which we can use to test two extremes of young generation GC behavior. If `-XX:+NeverTenure` is set, objects are never promoted to the old generation. This behavior makes sense when we are sure that we don’t need an old generation at all. However, as such, the flag is apparently very risky and also wastes at least half of the reserved heap memory. The inverse behavior can be triggered with `-XX:+AlwaysTenure`, i.e., no survivor spaces are used so that all young objects are immediately promoted to the old generation on their first GC. Again, it is difficult to find a valid use case for this flag – it can be fun to see what happens in a testing environment, but apart from that I would not recommend using either flag.
 
 
 
@@ -233,6 +235,8 @@ While there are different approaches to use these flags to tune young generation
 [Garbage Collection in Java](http://java-latte.blogspot.in/2013/08/garbage-collection-in-java.html)
 
 [Runtime Data Areas – Java’s Memory Model](http://www.pointsoftware.ch/en/under-the-hood-runtime-data-areas-javas-memory-model/)
+
+[Useful JVM Flags – Part 5 (Young Generation Garbage Collection)](https://blog.codecentric.de/en/2012/08/useful-jvm-flags-part-5-young-generation-garbage-collection/)
 
 ---
 
