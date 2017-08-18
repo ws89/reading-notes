@@ -129,6 +129,28 @@ Eden space= 208
 
 
 
+# Young Generation
+
+Most objects “die” young, i.e., after their creation they are not referenced for long in the program flow. Also, it has been observed that young objects are rarely referenced by older objects.
+
+The Sun/Oracle HotSpot JVM further divides the young generation into three sub-areas: **one large** area named “Eden” and **two smaller** “survivor spaces” named “From” and “To”. As a rule, new objects are allocated in “Eden” (with the exception that **if a new object is too large to fit into “Eden” space, it will be** 
+**directly allocated in the *old generation***).
+
+Based on the assumption that most of the young objects may be deleted during a GC, a copying strategy (“copy collection”) is being used for young generation GC. At the beginning of a GC, the survivor space “To” is empty and objects can only exist in “Eden” or “From”. Then, during the GC, all objects in “Eden” that are still being referenced are moved into “To”. Regarding “From”, the still referenced objects in this space are handled depending on their age. If they have not reached a certain age (“tenuring threshold”), they are also moved into “To”. Otherwise they are moved into the old generation. At the end of this copying procedure, “Eden” and “From” can be considered empty (because they only contain dead objects), and all live objects in the young generation are located in “To”. Should “To” fill up at some point during the GC, all remaining objects are moved into the old generation instead (and will never return). As a final step, “From” and “To” swap their roles (or, more precisely, their names) so that “To” is empty again for the next GC and “From” contains all remaining young objects.
+
+![https://blog.codecentric.de/files/2011/08/young_gc.png](https://blog.codecentric.de/files/2011/08/young_gc.png)
+
+Example showing the initial state and the result of a young generation GC. Free space is green, objects not referenced anymore are yellow, and still referenced objects are red. In this example, the survivor spaces are large enough so that no objects need to be moved into the old generation.
+
+
+
+It now becomes clear why young generation sizing is so important: ***If the young generation is too small, short-lived objects will quickly be moved into the old generation where they are harder to collect. Conversely, if the young generation is too large, we will have lots of unnecessary copying for long-lived objects that will later be moved to the old generation anyway.*** Thus we need to find a compromise somewhere between small and large young generation size. Unfortunately, finding the right compromise for a particular application can often only be done by systematic measurement and tuning. And that’s where the JVM flags come into play.
+
+
+
+
+
+
 
 # References
 
