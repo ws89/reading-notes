@@ -148,6 +148,32 @@ It now becomes clear why young generation sizing is so important: ***If the youn
 
 
 
+## -XX:NewSize and -XX:MaxNewSize
+
+Similar to the total heap size (with `-Xms` and `-Xmx`) it is possible to explicitly set a lower and upper bound for the size of the young generation. However, when setting `-XX:MaxNewSize` we need to take into account that the young generation is only one part of the heap and that the larger we choose its size the smaller the old generation will be. For stability reasons it is not allowed to choose a young generation size larger than the old generation, because in the worst case it may become necessary for a GC to move all objects from the young generation into the old generation. Thus `-Xmx/2` is an upper bound for `-XX:MaxNewSize`.
+
+For performance reasons we may also specify the initial size of the young generation using the flag `-XX:NewSize`. This is useful if we know the rate at which young objects are being allocated (for example because we measured it!) and can save some of the costs required for slowly growing the young generation to that size over time.
+
+
+
+**-XX:NewRatio**
+
+It is also possible to specify the young generation size in relation to the size of the old generation. The potential advantage of this approach is that the young generation will grow and shrink automatically when the JVM dynamically adjusts the total heap size at run time. The flag `-XX:NewRatio` allows us to specify the factor by which the old generation should be larger than the young generation. For example, with `-XX:NewRatio=3` the old generation will be three times as large as the young generation. That is, the old generation will occupy 3/4 and the young generation will occupy 1/4 of the heap.
+
+**If we mix absolute and relative sizing of the young generation, the absolute values always have precedence**. Consider the following example:
+
+```java
+$ java -XX:NewSize=32m -XX:MaxNewSize=512m -XX:NewRatio=3 MyApp
+```
+
+With these settings, the JVM will try to size the young generation at one third of the old generation size, but it will never let young generation size fall below 32 MB or exceed 512 MB.
+
+There is no general rule if absolute or relative young generation sizing is preferable. If we know the memory usage of our application well, it can be advantageous to specify a fixed size both for the total heap and the young generation, and it can also be useful to specify a ratio. If we only know a little or maybe nothing at all about our application in this respect, the correct approach is to just let the JVM do the work and not to mess around with the flags. If the application runs smoothly, we can be happy that we didn’t put in extra effort where none was needed. And should we encounter performance problems or OutOfMemoryErrors, we would still need to first perform a series of meaningful measurements to narrow down the root cause of the problem before moving on to tuning.
+
+
+
+
+
 
 
 
