@@ -182,7 +182,7 @@ In summary, we want to minimize the number of short-lived objects that are prema
 
 
 
--XX:+PrintTenuringDistribution
+## -XX:+PrintTenuringDistribution
 
 With the flag `-XX:+PrintTenuringDistribution` we tell the JVM to print the age distribution of all objects contained in the survivor spaces on each young generation GC. Take the following example:
 
@@ -208,6 +208,25 @@ Desired survivor size 75497472 bytes, new threshold 2 (max 15)
 Let us compare the output to the previous tenuring distribution. Apparently, all the objects of age 2 and 3 from the previous output are still located in “To”, because here we see exactly the same number of bytes printed for age 3 and 4. We can also conclude that some of the objects in “To” have been successfully collected by the GC, because now we only have 12 MB of objects of age 2 while in the previous output we had 19 MB listed for age 1. Finally, we see that about 68 MB of new objects, shown at age 1, have been moved from “Eden” into “To” during the last GC.
 
 Note that the total number of bytes in “To” – in this case almost 84 MB – is now larger than the desired number of 75 MB. As a consequence, the JVM has reduced the tenuring threshold from 15 to 2, so that with the next GC some of the objects will be forced to leave “To”. These objects will then either be collected (if they have died in the meantime) or moved to the old generation (if they are still referenced).
+
+
+
+
+
+## -XX:InitialTenuringThreshold, -XX:MaxTenuringThreshold and -XX:TargetSurvivorRatio
+
+The tuning knobs shown in the output of `-XX:+PrintTenuringDistribution` can be adjusted by various flags. With `-XX:InitialTenuringThreshold` and `-XX:MaxTenuringThreshold` we can set the initial and maximum value of the tenuring threshold, respectively. Additionally, we can use `-XX:TargetSurvivorRatio` to specify the target utilization (in percent) of “To” at the end of a young generation GC. For example, the combination `-XX:MaxTenuringThreshold=10 -XX:TargetSurvivorRatio=90` sets an upper bound of 10 for the tenuring threshold and a target utilization of 90 percent for the “To” survivor space.
+
+While there are different approaches to use these flags to tune young generation behavior, no general guideline is available. We restrict ourselves to two cases that are pretty clear:
+
+- If the tenuring distribution shows that many objects just grow older and older before finally reaching the maximum tenuring threshold, this indicates that the value of `-XX:MaxTenuringThreshold` may be too large.
+- If the value of `-XX:MaxTenuringThreshold` is larger than 1 but most objects never reach an age larger than 1, we should take a look at the target utilization of “To”. Should the target utilization never be reached, then we know that all young objects get collected by the GC, which is exactly what we want. However, if the target utilization is frequently reached, then at least some of the objects beyond age 1 have been moved into the old generation, and maybe prematurely so. In this case, we can try to tune the survivor spaces by increasing their size or target utilization.
+
+
+
+
+
+
 
 # References
 
