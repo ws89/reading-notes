@@ -57,7 +57,7 @@ Read → Think → Note → Review
      - [JVM-generations](/java/jvm/JVM-generations.md)
      - [System.gc()](/java/jvm/system-gc.md)
      - [GC-tuning-overview](/java/jvm/gc-tuning-overview.md)
-     - [GC-tuning-young-generation](/java/jvm/gc-tuninng-young-generation.md)
+     - [GC-tuning-young-generation](/java/jvm/gc-tuning-young-generation.md)
    - [generic](/java/generic.md)
    - [collections(equals()、hashCode()、stream()](/java/collections.md)
    - [lambda](/java/lambda.md)
