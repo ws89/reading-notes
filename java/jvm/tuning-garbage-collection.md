@@ -182,7 +182,32 @@ In summary, we want to minimize the number of short-lived objects that are prema
 
 
 
+-XX:+PrintTenuringDistribution
 
+With the flag `-XX:+PrintTenuringDistribution` we tell the JVM to print the age distribution of all objects contained in the survivor spaces on each young generation GC. Take the following example:
+
+```
+Desired survivor size 75497472 bytes, new threshold 15 (max 15)
+- age   1:   19321624 bytes,   19321624 total
+- age   2:      79376 bytes,   19401000 total
+- age   3:    2904256 bytes,   22305256 total
+```
+
+The first line tells us that the target utilization of the “To” survivor space is about 75 MB. It also shows some information about the “tenuring threshold”, which represents the number of GCs that an object may stay in the young generation before it is moved into the old generation (i.e., the maximum age of the object before it gets promoted). In this example, we see that the current tenuring threshold is 15 and that its maximum value is 15 as well.
+
+The next lines show, for each object age lower than the tenuring threshold, the total number of bytes of all objects that currently have that age (if no objects currently exist for a certain age, that line is omitted). In the example, about 19 MB have already survived one GC, about 79 KB have survived two GCs, and about 3 MB have survived three GCs. At the end of each line, we see the accumulated byte count of all objects up to that age. Thus, the “total” value in the last line indicates that the “To” survivor space currently contains about 22 MB of object data. As the target utilization of “To” is 75 MB and the current tenuring threshold is 15, we can conclude that no objects have to be promoted to the old generation as part of the current young generation GC. Now suppose that the next GC leads to the following output:
+
+```
+Desired survivor size 75497472 bytes, new threshold 2 (max 15)
+- age   1:   68407384 bytes,   68407384 total
+- age   2:   12494576 bytes,   80901960 total
+- age   3:      79376 bytes,   80981336 total
+- age   4:    2904256 bytes,   83885592 total
+```
+
+Let us compare the output to the previous tenuring distribution. Apparently, all the objects of age 2 and 3 from the previous output are still located in “To”, because here we see exactly the same number of bytes printed for age 3 and 4. We can also conclude that some of the objects in “To” have been successfully collected by the GC, because now we only have 12 MB of objects of age 2 while in the previous output we had 19 MB listed for age 1. Finally, we see that about 68 MB of new objects, shown at age 1, have been moved from “Eden” into “To” during the last GC.
+
+Note that the total number of bytes in “To” – in this case almost 84 MB – is now larger than the desired number of 75 MB. As a consequence, the JVM has reduced the tenuring threshold from 15 to 2, so that with the next GC some of the objects will be forced to leave “To”. These objects will then either be collected (if they have died in the meantime) or moved to the old generation (if they are still referenced).
 
 # References
 
