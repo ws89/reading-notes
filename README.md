@@ -97,6 +97,7 @@ Read → Think → Note → Review
    - [some-questions](/redis/questions.md)
    - [persistence](/redis/persistence.md)
    - [commands](/redis/commands.md)
+   - [distributed-lock](/redis/distributed-lock.md)
 
 
 ---
