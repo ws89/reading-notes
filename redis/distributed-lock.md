@@ -133,6 +133,14 @@ Using *delayed restarts* it is basically possible to achieve safety even without
 
 
 
+## Making the algorithm more reliable: Extending the lock
+
+If the work performed by clients is composed of small steps, it is possible to use smaller lock validity times by default, and extend the algorithm implementing a lock extension mechanism. Basically the client, if in the middle of the computation while the lock validity is approaching a low value, may extend the lock by sending a Lua script to all the instances that extends the TTL of the key if the key exists and its value is still the random value the client assigned when the lock was acquired.
+
+The client should only consider the lock re-acquired if it was able to extend the lock into the majority of instances, and within the validity time (basically the algorithm to use is very similar to the one used when acquiring the lock).
+
+However this does not technically change the algorithm, so the maximum number of lock reacquisition attempts should be limited, otherwise one of the liveness properties is violated.
+
 # References
 
 [Distributed locks with Redis](https://redis.io/topics/distlock)
