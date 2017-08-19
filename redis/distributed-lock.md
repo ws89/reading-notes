@@ -101,7 +101,17 @@ If a client locked the majority of instances using a time near, or greater, than
 
 
 
+## Liveness arguments
 
+The system liveness is based on three main features:
+
+1. The auto release of the lock (since keys expire): eventually keys are available again to be locked.
+2. The fact that clients, usually, will cooperate removing the locks when the lock was not acquired, or when the lock was acquired and the work terminated, making it likely that we don’t have to wait for keys to expire to re-acquire the lock.
+3. The fact that when a client needs to retry a lock, it waits a time which is comparably greater than the time needed to acquire the majority of locks, in order to probabilistically make split brain conditions during resource contention unlikely.
+
+However, we pay an availability penalty equal to [TTL](https://redis.io/commands/ttl) time on network partitions, so if there are continuous partitions, we can pay this penalty indefinitely. This happens every time a client acquires a lock and gets partitioned away before being able to remove the lock.
+
+Basically if there are infinite continuous network partitions, the system may become not available for an infinite amount of time.
 
 
 
