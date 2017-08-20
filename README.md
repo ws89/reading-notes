@@ -93,11 +93,15 @@ Read → Think → Note → Review
 - redis
    - [redis-key-descprition](/redis/redis-keys.md)
    - [data-types](/redis/data-types.md)
-   - [transaction](/redis/transaction.md)
    - [some-questions](/redis/questions.md)
-   - [persistence](/redis/persistence.md)
    - [commands](/redis/commands.md)
-   - [distributed-lock](/redis/distributed-lock.md)
+   - topics
+     - [distributed-lock](/redis/distributed-lock.md)
+     - [transaction](/redis/transaction.md)
+     - [persistence](/redis/persistence.md)
+     - [cluster](/redis/cluster.md)
+     - [partitioning](/redis/partitioning.md)
+     - [pipelining](/redis/pipelining.md)
 
 
 ---
