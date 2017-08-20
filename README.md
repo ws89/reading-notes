@@ -102,6 +102,7 @@ Read → Think → Note → Review
      - [cluster](/redis/cluster.md)
      - [partitioning](/redis/partitioning.md)
      - [pipelining](/redis/pipelining.md)
+     - [publish/subscribe](/redis-publish-subscribe.md)
 
 
 ---
