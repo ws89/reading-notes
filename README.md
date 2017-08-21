@@ -103,6 +103,8 @@ Read → Think → Note → Review
      - [partitioning](/redis/partitioning.md)
      - [pipelining](/redis/pipelining.md)
      - [publish/subscribe](/redis/publish-subscribe.md)
+- mysql
+   - [clustered-index](/mysql/clustered-index.md)
 
 
 ---
