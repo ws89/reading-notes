@@ -31,6 +31,16 @@ In summary, when designing (or using!) a GC algorithm we have to decide what we 
 
 
 
+### Garbage collection on the HotSpot JVM
+
+As we want to focus on configuration flags, I will only give a brief overview of the throughput-oriented GC algorithms offered by HotSpot. The GC algorithm is triggered when an object allocation in the old generation fails due to lack of space (usually, the “allocation” is in fact a promotion of an object from the young generation). Starting at so-called “GC roots”, the GC then searches the heap for reachable objects and marks them as alive. Afterwards, the GC moves the live objects within the old generation so that they occupy a single, non-fragmented memory block, and takes a note that the remaining memory area is free. That is, we don’t follow a copying strategy into a different heap area, like the young generation GC algorithm does. Instead, we keep all objects in the same heap area, thereby defragmenting that area. The collectors use one or more threads to perform GC. When more than one thread is used, the different steps of the algorithm are subdivided such that each GC thread mostly works in its own area without interfering with others. During a GC, all application threads are paused, getting restarted only when the GC is finished. Now let us take a look at the most important flags regarding the throughput-oriented GC algorithms.
+
+
+
+
+
+
+
 # References
 
 [Useful JVM Flags – Part 6 (Throughput Collector)](https://blog.codecentric.de/en/2013/01/useful-jvm-flags-part-6-throughput-collector/)
