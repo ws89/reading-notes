@@ -19,6 +19,16 @@ The term “pause time” refers to a time span in which the **application threa
 
 
 
+### Throughput vs. pause times
+
+A high throughput is desirable because only the application threads perform “productive” work in the perception of the end user of the application. Intuitively, an application runs faster if the throughput is higher. Low pause times are desirable as well, because from the end user’s perspective a hanging application is always undesirable regardless of whether the stalls are being caused by GC or other reasons. Depending on the type of application, even short pauses of 200 milliseconds can disrupt end user experience. Thus, it is important to have a low maximum pause time, in particular for an interactive application.
+
+Unfortunately, “high throughput” and “low pause times” are competing goals. Think about it this way, again a bit simplified for the sake of clarity: A GC requires certain preconditions in order to run safely. For example, it must be guaranteed that application threads do not modify the state of objects while the GC threads try to decide which objects are still referenced and which ones are not. For this reason, the application threads must be stopped during a GC (or, depending on the algorithm used, only during certain phases of a GC). This, however, **causes additional costs for thread scheduling: direct costs through context switches and indirect costs because of cache effects.** Together with the costs for additional JVM-internal safety measures, this means that each GC comes along with some non-negligible overhead, which adds up with the time taken by the GC threads to perform their actual work. Therefore, we can maximize throughput by running the GC as seldom as possible, i.e., only when it is unavoidable, to save all the overhead associated with it.
+
+However, executing the GC only infrequently means that whenever a GC is run it has much more work to do, as the number of objects that accumulated on the heap in the meantime is much higher. A single GC takes more time until completion, which in turn causes higher average and maximum pause times. Thus, with low pause times in mind, it would be desirable to run the GC more frequently so that each single run completes more quickly. This in turn adds overhead and causes throughput to decline, and we are back where we started.
+
+In summary, when designing (or using!) a GC algorithm we have to decide what we are aiming for: A GC algorithm may **target one of the two goals only** (i.e., solely focus on maximum throughput or on minimal pause times) or try to **find a compromise between them**.
+
 
 
 # References
