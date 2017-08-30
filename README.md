@@ -106,6 +106,7 @@ Read → Think → Note → Review
      - [publish/subscribe](/redis/publish-subscribe.md)
 - mysql
    - [clustered-index](/mysql/clustered-index.md)
+   - [date-type](/mysql/date-type.md)
 - mybatis
    - [string-substitution(#-&)](/mybatis/string-substitution(#-$).md)
 
